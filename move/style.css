@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+  background-color: #1C1C1C;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  color: white;
+  font-family: Oswald, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 140px;
+  padding-top: 120px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  padding-top: 250px;
+}
+
+p {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+a {
+  background-color: #1C1C1C;
+  color: white;
+  font-family: Oswald, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  background: url("https://s3.amazonaws.com/codecademy-content/projects/move/bg.jpg") 0/cover;
+  height: 70vh;
+  text-align: center;
+}
+
+/* SUPPORT SECTION */
+
+.support {
+  display: flex;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.value-support {
+  flex: 1;
+  padding: 70px 30px;
+  text-align: center;
+}
+
+.value-support h3 {
+  color: #FFA800;
+}
+
+/* CONTENT SECTION */
+.content {
+  background: url("https://s3.amazonaws.com/codecademy-content/projects/move/feature.jpg") 0/cover;
+  height: 600px;
+  text-align: center;
+}
+
+/* PREMIUM CONTENT */
+.premium {
+  padding: 60px;
+  text-align: center;
+}
+
+.premium h3 {
+  color: #FFA800;
+}
+
+.premium a {
+  background-color: white;
+  color: #1C1C1C;
+}
+
+/* FOOTER */
+footer {
+  background: url("https://s3.amazonaws.com/codecademy-content/projects/move/footer.jpg") 0/cover;
+  text-align: center;
+  height: 600px;
+}
+
+footer a {
+  margin: 40px;
+}
