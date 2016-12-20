@@ -43,7 +43,7 @@ a {
 /* HERO */
 .hero {
   background: url("https://s3.amazonaws.com/codecademy-content/projects/move/bg.jpg") 0/cover;
-  height: 70vh;
+  height: 700px;
   text-align: center;
 }
 
