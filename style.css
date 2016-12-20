@@ -11,6 +11,8 @@ body {
 .hero {
   background: url("https://static.pexels.com/photos/51415/pexels-photo-51415.jpeg") 0/cover;
   height: 100vh;
+  overflow: hidden;
+  text-align: center;
 }
 
 .hero-content {
@@ -22,24 +24,26 @@ body {
   top: 15%;
   width: 70%;
 }
+
 .hero-content h1 {
   color: white;
-  font-size: 120px;
-  margin-top: 10%;
+  font-size: 12vh;
+  position: relative;
+  margin: 10vh 0 5vh;
   }
 
 .hero-content h2 {
   color: white;
-  font-size: 130px;
+  font-size: 15vh;
   margin: 0;
 }
 
 .hero i {
+  bottom: 5%;
   color: white;
   font-size: 36px;
   left: 50%;
   position: absolute;
-  top: 90%;
 }
 
 .links {
