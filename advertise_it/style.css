@@ -1,0 +1,395 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+/* GENERAL */
+
+* { box-sizing: border-box; }
+
+body {
+  background: #FFF;
+  font-family: Quicksand, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: Bangers, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+h3 { font-size: 24px; }
+
+/* CLEARFIX*/
+.row:before,
+.row:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.row:after {
+  clear: both;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* NAVIGATION */
+header {
+  background: #333;
+  height: 54px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+nav {
+  background: #333;
+  color: #FFF;
+}
+
+nav img {
+  float: left;
+  padding: 5px 20px;
+}
+
+nav ul {
+  float: right;
+  margin: 0 10px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav a {
+  color: #FFF;
+  display: block;
+  float: right;
+  font-weight: 900;
+  line-height: 50px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #00C7E8;
+}
+
+/* HERO */
+
+.hero {
+  background: url("https://s24.postimg.org/5nklnwtgl/hero.jpg") 0/cover;
+  height: 650px;
+}
+
+.slogan {
+  background: rgba(0, 0, 0, 0.5);
+  float: right;
+  max-width: 800px;
+  position: relative;
+  top: 40%;
+}
+
+.hero h1 {
+  color: #FFF;
+  line-height: 5px;
+  padding: 10px 120px 10px 10px;
+  text-align: left;
+}
+
+/* FEATURE */
+
+.feature {
+  background-color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+.feature i {
+  color: #FFF;
+  font-size: 48px;
+}
+
+.feature-icon {
+  background: #333;
+  border-radius:  10px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  width: 110px;
+}
+
+.feature-icon:hover {
+  background: #00C7E8;
+}
+
+.feature-text {
+  background-color: white;
+  padding: 0 15% 30px;
+}
+
+/* IMAGES */
+
+.image {
+  background: url("http://placehold.it/500x300") center center;
+  color: #FFF;
+  height: 240px;
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.middle {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  transition: .5s ease;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width:  100%;
+}
+
+.image-layer {
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  height: 100%;
+  width: 100%;
+}
+
+.image-layer-icon {
+  background: #FFF;
+  border-radius: 7px;
+  color: #222;
+  display: inline-block;
+  padding: 5px;
+  position: relative;
+  top: 40%;
+  width: 40px;
+  cursor: pointer;
+}
+
+.image:hover .middle {
+  opacity: 1;
+}
+
+/* PEOPLE */
+
+.people {
+  position: relative;
+  top: 50px;
+  width: 50%;
+}
+
+.people img {
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.people .overlay {
+  bottom: 0;
+  height: 100%;
+  left: 15%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top:0;
+  transition: .8s ease;
+  width: 0;
+}
+
+.people:hover .overlay {
+  width: 70%;
+}
+.people:hover img {
+  opacity: 0.5;
+}
+
+.layer {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  display: block;
+  height: auto;
+  left: 5%;
+  margin: 30px;
+  position: relative;
+  width: 70%;
+}
+
+.people .text {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  left: 50%;
+  position: absolute;
+  overflow: hidden;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.people p {
+  font-weight: 900;
+}
+
+/* PROMO */
+.promo {
+  background: #333;
+  margin: 100px auto 0;
+}
+
+.promo-image {
+  background: url("https://s30.postimg.org/ji21jooe9/promo.jpg") 0/cover;
+  height: 300px;
+}
+
+.promo h2 {
+  color: #FFF;
+  padding: 0 40px;
+  text-align: left;
+}
+
+.promo p {
+  color: #FFF;
+  padding: 10px 30px;
+  text-align: left;
+}
+
+.promo img {
+  background-attachment: fixed;
+}
+
+/* NUMBERS */
+
+.numbers {
+  background-color: #FFF;
+  padding: 30px 0;
+}
+
+.numbers p {
+  color: #00C7E8;
+  font-weight: 900;
+  text-transform: uppercase;
+
+}
+
+/* CONTACT*/
+
+.contact {
+  background: #333;
+  color: #FFF;
+  padding: 50px;
+  text-align: left;
+}
+
+.contact  p {
+  margin: 5px 20px 0 0;
+}
+
+.contact .col-3 p {
+  font-weight: 900;
+}
+
+.icon-btn {
+  background-color: #00C7E8;
+  border: none;
+  border-radius: 5%;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 18px;
+  height: 35px;
+  line-height: 35px;
+  margin: 15px 15px 0 0 ;
+  width: 35px;
+}
+
+.icon-btn:hover {
+  color: #FFFFFF;
+  transform: scale(1.10);
+}
+
+.facebook:hover {
+  background-color: #3B5998
+}
+
+.twitter:hover {
+  background-color: #4099FF;
+}
+
+.google:hover {
+  background-color: #DB5A3C;
+}
+
+.instagram:hover {
+  background-color: #5C3D2E;
+}
+
+.youtube:hover {
+  background-color: #E62117;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #2A2A2A;
+  color: #FFF;
+}
+
+/* GRID */
+[class*="col-"] {
+  float: left;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.col-offset-0 {margin-left: 0; }
+.col-offset-1 {margin-left: 8.33%; }
+.col-offset-2 {margin-left: 16.66%; }
+.col-offset-3 {margin-left: 25%; }
+.col-offset-4 {margin-left: 33.33%; }
+.col-offset-5 {margin-left: 41.66%; }
+.col-offset-6 {margin-left: 50%; }
+.col-offset-7 {margin-left: 58.33%; }
+.col-offset-8 {margin-left: 66.66%; }
+.col-offset-9 {margin-left: 75%; }
+.col-offset-11 {margin-left: 91.66%; }
+.col-offset-10 {margin-left: 83.33%; }
+
+/* 20% WIDTH COLUMN */
+.col-20 {width: 20%;}
+
+/* IMAGES */
+
+.img-1 { background: url("https://s29.postimg.org/lcu1sm213/restaurant_2.jpg") center center; }
+.img-2 { background: url("https://s29.postimg.org/97v4hxqg7/travel_2.jpg") center center; }
+.img-3 { background: url("https://s29.postimg.org/qmfcq7nl3/travel_3.jpg") center center; }
+.img-4 { background: url("https://s27.postimg.org/x10x282yr/games_4.jpg") center center; }
+.img-5 { background: url("https://s29.postimg.org/silsv2b47/restaurant_4.jpg") center center; }
+.img-6 { background: url("https://s29.postimg.org/mtvuah82v/travel_6.jpg") center center; }
+.img-7 { background: url("https://s27.postimg.org/5azqnjoqr/games_2.jpg") center center; }
+.img-8 { background: url("https://s29.postimg.org/a1re48v5z/restaurant_3.jpg") center center; }
+.img-9 { background: url("https://s29.postimg.org/g25f7mj3b/travel_5.jpg") center center; }
+.img-10 { background: url("https://s29.postimg.org/vjnve7j8n/travel_1.jpg") center center; }
