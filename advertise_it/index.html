@@ -2,50 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advertise.IT</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header class="row">
-      <div class="col-12">
+    <header class="row" id="home">
+      <div class="col-s-12 col-m-12">
         <div class="row container">
-          <nav class="col-12">
-          <img src="https://s28.postimg.org/7swyjk271/logo2.png" alt="" height="50">
-          <ul>
+          <nav class="col-s-12 col-m-12">
+          <img src="http://i66.tinypic.com/i5vzfb.png" alt="" height="50">
+          <ul class="topnav" id="myTopnav">
             <li><a href="#home">home</a></li>
             <li><a href="#services">services</a></li>
             <li><a href="#gallery">gallery</a></li>
             <li><a href="#people">people</a></li>
             <li><a href="#contact">contact</a></li>
+            <li class="icon">
+              <a href="javascript:void(0);" style="font-size:15px;" onclick="toggleMenu()">☰</a>
+            </li>
           </ul>
         </nav>
         </div>
       </div>
     </header>
-    <section class="row" id="home">
-      <div class="col-12 hero">
+
+    <!-- HERO -->
+    <section class="row">
+      <div class="col-s-12 col-m-12 hero">
         <div class="slogan">
           <h1>something for sale?</h1>
           <h1>advertise.IT</h1>
         </div>
       </div>
     </section>
+
+    <!-- SERVICES -->
     <section class="row container" id="services">
-      <div class="col-4 feature">
+      <div class="col-s-12 col-m-4 feature">
         <div class="feature-icon">
           <i class="fa fa-television"></i>
         </div>
         <h2>see it</h2>
         <p>We will put your product in a form of TV or paper ad that catches the eye.</p>
       </div>
-      <div class="col-4 feature">
+      <div class="col-s-12 col-m-4 feature">
         <div class="feature-icon">
           <i class="fa fa-volume-up"></i>
         </div>
         <h2>hear it</h2>
         <p>You want your customers to sing the song from your product radio ad while they take a shower? Here we come.</p>
       </div>
-      <div class="col-4 feature">
+      <div class="col-s-12 col-m-4 feature">
         <div class="feature-icon">
           <i class="fa fa-glass"></i>
         </div>
@@ -65,7 +73,7 @@
     <!-- First line of photos-->
     <section class="row" id="gallery">
       <!-- 1st photo-->
-      <div class="col-20 image img-1">
+      <div class="col-s-12 col-m-3 image img-1">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -78,7 +86,7 @@
         </div>
       </div>
       <!-- 2nd photo-->
-      <div class="col-20 image img-2">
+      <div class="col-s-12 col-m-3 image img-2">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -91,7 +99,7 @@
         </div>
       </div>
       <!-- 3rd photo-->
-      <div class="col-20 image img-3">
+      <div class="col-s-12 col-m-3 image img-3">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -104,20 +112,7 @@
         </div>
       </div>
       <!-- 4th photo-->
-      <div class="col-20 image img-4">
-        <div class="middle">
-          <div class="image-layer">
-            <div class="image-layer-icon">
-              <i class="fa fa-link"></i>
-            </div>
-            <div class="image-layer-icon">
-              <i class="fa fa-search"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 5th photo-->
-      <div class="col-20 image img-5">
+      <div class="col-s-12 col-m-3 image img-4">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -134,7 +129,7 @@
     <!-- Second line of photos-->
     <section class="row">
       <!-- 1st photo-->
-      <div class="col-20 image img-6">
+      <div class="col-s-12 col-m-3 image img-6">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -147,7 +142,7 @@
         </div>
       </div>
       <!-- 2nd photo-->
-      <div class="col-20 image img-7">
+      <div class="col-s-12 col-m-3 image img-7">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -160,7 +155,7 @@
         </div>
       </div>
       <!-- 3rd photo-->
-      <div class="col-20 image img-8">
+      <div class="col-s-12 col-m-3 image img-8">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -173,20 +168,7 @@
         </div>
       </div>
       <!-- 4th photo-->
-      <div class="col-20 image img-9">
-        <div class="middle">
-          <div class="image-layer">
-            <div class="image-layer-icon">
-              <i class="fa fa-link"></i>
-            </div>
-            <div class="image-layer-icon">
-              <i class="fa fa-search"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 5th photo-->
-      <div class="col-20 image img-10">
+      <div class="col-s-12 col-m-3 image img-9">
         <div class="middle">
           <div class="image-layer">
             <div class="image-layer-icon">
@@ -205,9 +187,9 @@
 
     <section class="row container" id="people">
       <!-- 1st people-->
-      <div class="col-3 people">
+      <div class="col-s-6 col-m-3 people">
         <div class="layer">
-          <img src="https://s30.postimg.org/g9fp1gech/people_director.jpg" alt="image">
+          <img src="http://i66.tinypic.com/2ajcj9v.jpg" alt="image">
         </div>
         <div class="overlay">
             <div class="text">Director</div>
@@ -215,9 +197,9 @@
         <p>John Dow</p>
       </div>
       <!-- 2nd people-->
-      <div class="col-3 people">
+      <div class="col-s-6 col-m-3 people">
         <div class="layer">
-          <img src="https://s23.postimg.org/pnoyyuksr/people_woman.jpg" alt="image">
+          <img src="http://i68.tinypic.com/54voch.jpg" alt="image">
         </div>
         <div class="overlay">
           <div class="text">Human resources</div>
@@ -225,9 +207,9 @@
         <p>Margaret Brian</p>
       </div>
       <!-- 3rd people-->
-      <div class="col-3 people">
+      <div class="col-s-6 col-m-3 people">
         <div class="layer">
-          <img src="https://s30.postimg.org/4vt5q93tt/people_designer.jpg" alt="image">
+          <img src="http://i63.tinypic.com/qsvd00.jpg" alt="image">
         </div>
         <div class="overlay">
           <div class="text">Designer</div>
@@ -235,9 +217,9 @@
         <p>Jim Scotsky</p>
       </div>
       <!-- 4th people-->
-      <div class="col-3 people">
+      <div class="col-s-6 col-m-3 people">
         <div class="layer">
-          <img src="https://s30.postimg.org/nqowgo3vl/people_graphic.jpg" alt="image">
+          <img src="http://i68.tinypic.com/16ar480.jpg" alt="image">
         </div>
         <div class="overlay">
           <div class="text">Photographer</div>
@@ -249,21 +231,21 @@
     <!-- SECTION PROMO -->
 
     <section class="row container promo">
-        <div class="col-5 promo-image">
+        <div class="col-s-12 col-m-5 promo-image">
         </div>
-        <div class="col-7">
+        <div class="col-s-12 col-m-7">
           <div class="row">
-            <div class="col-12">
+            <div class="col-m-12">
               <h2>Give us a chance</h2>
             </div>
           </div>
           <div class="row">
-            <div class="col-10">
+            <div class="col-s-12 col-m-10">
               <p>You want us to create publicity campaign for you? Just come to our office, have a drink and tell us what you want. Advertise.IT will come up with ideas that will blow your mind.</p>
             </div>
-            <div class="col-2">
-              <p></p>
-            </div>
+            <!--<div class="col-m-2">-->
+              <!--<p></p>-->
+            <!--</div>-->
           </div>
         </div>
 
@@ -272,19 +254,19 @@
 <!-- SECTION NUMBERS-->
 
     <section class="row container">
-        <div class="col-3 numbers">
+        <div class="col-s-6 col-m-3 numbers">
           <h1>234</h1>
           <p>brainstorms</p>
         </div>
-        <div class="col-3 numbers">
+        <div class="col-s-6 col-m-3 numbers">
           <h1>65</h1>
           <p>campaigns created</p>
         </div>
-        <div class="col-3 numbers">
+        <div class="col-s-6 col-m-3 numbers">
           <h1>457</h1>
           <p>coffees drunk</p>
         </div>
-        <div class="col-3 numbers">
+        <div class="col-s-6 col-m-3 numbers">
           <h1>41</h1>
           <p>events organised</p>
         </div>
@@ -293,48 +275,48 @@
     <!--SECTION CONTACT -->
 
     <section class="row container" id="contact">
-      <div class="col-12 contact">
+      <div class="col-m-12 contact">
         <div class="row">
           <!-- ABOUT US-->
-          <div class="col-4">
+          <div class="col-s-12 col-m-4">
             <h3>about us</h3>
             <p>Advertise.IT is a young and creative team that enjoy spending time and working together. We drink pina colada and create new projects having great fun at the same time.</p>
           </div>
           <!-- GET IN TOUCH-->
-          <div class="col-4">
+          <div class="col-s-12 col-m-4">
             <h3>get in touch</h3>
             <!-- ADRESS-->
             <div class="row">
-              <div class="col-3">
+              <div class="col-s-6 col-m-3">
                 <p>Address:</p>
               </div>
-              <div class="col-9">
+              <div class="col-s-6 col-m-9 left">
                 <p>66 South Street</p>
                 <p>Window 6 Wonderland</p>
               </div>
             </div>
             <!-- PHONE -->
             <div class="row">
-              <div class="col-3">
+              <div class="col-s-6 col-m-3">
                 <p>Phone:</p>
               </div>
-              <div class="col-9">
+              <div class="col-s-6 col-m-9 left">
                 <p>+48 606489254 - office</p>
                 <p>+48 506148795 - fax</p>
               </div>
             </div>
             <!-- EMAIL -->
             <div class="row">
-              <div class="col-3">
+              <div class="col-s-6 col-m-3">
                 <p>Email:</p>
               </div>
-              <div class="col-9">
+              <div class="col-s-6 col-m-9 left">
                 <p>contact@advertise.it</p>
               </div>
             </div>
           </div>
           <!-- SOCIAL MEDIA -->
-          <div class="col-4">
+          <div class="col-s-12 col-m-4">
             <h3>social media</h3>
             <p>We are present in majority of social media sites. Check us now.</p>
             <button class="icon-btn facebook"><i class="fa fa-facebook"></i></button>
@@ -348,11 +330,13 @@
     </section>
 
 <!-- SECTION FOOTER-->
-
     <footer class="row container">
-      <div class="col-12">
+      <div class="col-m-12">
         <h3>Copyrights 2016</h3>
       </div>
     </footer>
+
+<!-- SCRIPT -->
+    <script src="script.js"></script>
   </body>
 </html>
