@@ -6,7 +6,7 @@
 * { box-sizing: border-box; }
 
 body {
-  background: #FFF;
+  background: url("https://richmarklabel.com/wp-content/uploads/2013/03/estate-number-nine.jpg");
   font-family: Quicksand, sans-serif;
   margin: 0;
   text-align: center;
@@ -116,7 +116,6 @@ ul.topnav li a:hover {
 /* FEATURE */
 
 .feature {
-  background-color: white;
   padding: 20px 50px;
   text-align: center;
 }
@@ -141,7 +140,6 @@ ul.topnav li a:hover {
 }
 
 .feature-text {
-  background-color: white;
   padding: 100px 15% 50px;
 }
 
@@ -283,7 +281,6 @@ ul.topnav li a:hover {
 /* NUMBERS */
 
 .numbers {
-  background-color: #FFF;
   padding: 100px 0;
 }
 
