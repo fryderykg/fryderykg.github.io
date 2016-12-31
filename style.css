@@ -55,16 +55,17 @@ body {
 .btn-link {
   color: white;
   padding: 30px;
+  display: block;
   position: relative;
   text-decoration: none;
-  top: 25%;
+  left: 40%;
 }
 
 .btn-link {
   border: 1px solid white;
   margin: 20px;
   padding: 20px;
-  width: 60px;
+  width: 160px;
 }
 
 .btn-link:hover {
