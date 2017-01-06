@@ -5,9 +5,8 @@
 
 body {
   /*background: rgba(0, 0, 0, 0.3);*/
-  /*background: url("https://i.imgsafe.org/7c0d68d835.png");*/
-  background: url("https://i.imgsafe.org/7c0cf25cb9.jpg");
-  /*background: url("https://i.imgsafe.org/7c0c323ce3.jpg");*/
+  /*background: url("https://i.imgsafe.org/f6c5930bd0.png");*/
+  background: url("https://i.imgsafe.org/f6c59ea70f.png");
   color: rgba(0, 0, 0, 0.7);
   font-family: Raleway, sans-serif;
   margin: 0;
@@ -33,7 +32,7 @@ p {
   margin: 0 auto;
 }
 
-.section {
+.page-section {
   background: white;
   min-height: 80vh;
 }
@@ -270,8 +269,8 @@ input:valid {
 
 /* FOOTER */
 footer {
-  color: rgba(0, 0, 0, 0.7);
-  height: 100px;
+  /*color: rgba(0, 0, 0, 0.7);*/
+  height: 5vh;
   text-align: center;
 }
 
@@ -283,7 +282,7 @@ footer p {
 footer a {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
   color: rgba(0, 0, 0, 0.7);
-  line-height: 70px;
+  line-height: 5vh;
   text-decoration: none;
   transition: all .3s;
 }
@@ -322,7 +321,7 @@ footer a:hover {
   .col-s-12 {width: 100%;}
 
   .spacer { display: none; }
-  .section { min-height: 100vh; }
+  .page-section { min-height: 100vh; }
   .photo-panel, .text-panel { min-height: 100vh; }
 }
 
