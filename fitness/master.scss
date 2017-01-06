@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext');
+
+$font-primary: 'Open Sans', sans-serif;
+$color-primary: #A2CA28; // green
+$color-secondary: #FD634E; //orange
+$color-dark: #0D1119; // almost black
+$color-text-light: white;
+$color-text-dark: #2a2a2a;
+
+* { box-sizing: border-box; }
+
+body {
+  background: $color-secondary;
+  font-family: $font-primary;
+  margin: 0;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 35px; }
+h3 { font-size: 24px; }
+h4 { font-size: 14px; }
+p { font-size: 14px; }
+
+.text-green { color: $color-primary; }
+.text-orange { color: $color-secondary; }
+.text-white { color: $color-text-light; }
+.text-thin { font-weight: 300; }
+.text-thick { font-weight: 700; }
+.bg-white { background: white;}
+.bg-green { background: $color-primary;}
+.bg-orange { background: $color-secondary;}
+
+.navbar {
+  background: $color-dark;
+  text-transform: uppercase;
+}
+
+.jumbotron {
+  color: $color-text-light;
+  font-family: $font-primary;
+  height: 100vh;
+  margin-bottom: 0;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+
+  .slogan {
+    bottom: 200px;
+    left: 10%;
+    letter-spacing: .2em;
+    position: absolute;
+    text-align: right;
+
+    h4 {
+      position: relative;
+      right: 10%;
+    }
+  }
+
+  .overlay-jumbotron {
+    background: $color-secondary;
+    bottom: 0;
+    height: 100px;
+    opacity: .3;
+    position: absolute;
+    transform: skewY(-2deg);
+    transform-origin: right;
+    width: 100%;
+  }
+}
+
+.features {
+  background: $color-primary;
+  color: $color-text-light;
+  margin: 0;
+  padding-bottom: 50px;
+  min-height: 350px;
+
+  i {
+    font-size: 60px;
+    padding: 60px 0 30px;
+  }
+
+}
+
+[class*='col-*'] {
+  height: 100%;
+}
+
+.right {
+  float: right;
+}
+
+// SERVICES
+.services {
+  .row {
+    min-height: 350px;
+  }
+
+  img {
+    padding: 20px;
+  }
+
+  p {
+    padding: 20px 0;
+  }
+}
+
+.text-panel {
+  height: 50vh;
+  max-height: 400px;
+  min-height: 350px;
+  padding: 80px 5%;
+}
+.image {
+  height: 50vh;
+  max-height: 400px;
+  min-height: 350px;
+}
+
+.services-orange {
+  background: $color-secondary;
+}
+
+.promo {
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  position: relative;
+
+  h2 {
+    margin: 0;
+  }
+
+  .text {
+    position: relative;
+    top: 50%;
+    margin: 0;
+  }
+
+  .overlay-promo-3 {
+    background: $color-secondary;
+    bottom: 0;
+    height: 40px;
+    position: absolute;
+    transform: skewY(2deg);
+    transform-origin: left;
+    width: 100%;
+  }
+
+  .overlay-promo-2 {
+    background: $color-dark;
+    bottom: 0;
+    height: 80px;
+    position: absolute;
+    transform: skewY(2deg);
+    transform-origin: left;
+    width: 100%;
+  }
+
+  .overlay-promo-1 {
+    background: $color-dark;
+    bottom: 0;
+    height: 75px;
+    position: absolute;
+    transform: skewY(-3deg);
+    transform-origin: right;
+    width: 100%;
+  }
+
+}
+
+.contact {
+  background: #0D1119;
+  padding-bottom: 50px;
+
+  input {
+    margin: 20px auto;
+  }
+}
+
+// FOOTER
+footer {
+  background: $color-dark;
+  height: 50px;
+  margin: 0;
+
+  a {
+    border-bottom: 1px dotted $color-text-light;
+    color: $color-text-light;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      border-bottom: none;
+      color: $color-text-light;
+      opacity: .5;
+      text-decoration: none;
+    }
+  }
+}
+
+.img-apple-watch { background: url('img/apple-watch.jpg') center/cover; }
+.img-beach { background: url('img/beach.jpg') center/cover; }
+.img-eating-habits { background: url('img/eating-habits.jpg') center/cover; }
+.img-footer { background: url('img/footer.jpg') center/cover; }
+.img-hero { background: url('img/hero.jpg') top/cover; }
+.img-jogging { background: url('img/jogging.jpg') center/cover; }
+.img-self-involved { background: url('img/self-involved.jpg') center/cover; }
+.img-yoga { background: url('img/yoga.jpg') center/cover; }
+
+@media (min-width: 991px) {
+  .pull-right-md {
+    float: right;
+  }
+}
