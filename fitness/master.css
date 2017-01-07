@@ -5,7 +5,8 @@
 body {
   background: #FD634E;
   font-family: "Open Sans", sans-serif;
-  margin: 0; }
+  margin: 0;
+  position: relative; }
 
 h1 {
   font-size: 40px; }
@@ -47,8 +48,13 @@ p {
   background: #FD634E; }
 
 .navbar {
-  background: #0D1119;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
   text-transform: uppercase; }
+  .navbar li a {
+    color: white !important; }
+  .navbar li.active a {
+    background: #A2CA28 !important; }
 
 .jumbotron {
   color: white;
@@ -61,11 +67,15 @@ p {
   text-transform: uppercase; }
   .jumbotron .slogan {
     bottom: 200px;
-    left: 10%;
-    letter-spacing: .2em;
+    left: 20%;
     position: absolute;
-    text-align: right; }
+    text-align: right;
+    font-size: 150%; }
+    @media (max-width: 551px) {
+      .jumbotron .slogan {
+        left: 5%; } }
     .jumbotron .slogan h4 {
+      letter-spacing: .15em;
       position: relative;
       right: 10%; }
   .jumbotron .overlay-jumbotron {
@@ -82,35 +92,25 @@ p {
   background: #A2CA28;
   color: white;
   margin: 0;
-  padding-bottom: 50px;
-  min-height: 350px; }
+  min-height: 350px;
+  padding-bottom: 50px; }
   .features i {
     font-size: 60px;
     padding: 60px 0 30px; }
 
-[class*='col-*'] {
-  height: 100%; }
-
-.right {
-  float: right; }
-
-.services .row {
+.services .text-panel {
+  height: 50vh;
+  max-height: 400px;
+  min-height: 350px;
+  padding: 80px 5%; }
+.services .image {
+  height: 50vh;
+  max-height: 400px;
   min-height: 350px; }
 .services img {
   padding: 20px; }
 .services p {
   padding: 20px 0; }
-
-.text-panel {
-  height: 50vh;
-  max-height: 400px;
-  min-height: 350px;
-  padding: 80px 5%; }
-
-.image {
-  height: 50vh;
-  max-height: 400px;
-  min-height: 350px; }
 
 .services-orange {
   background: #FD634E; }
@@ -156,6 +156,8 @@ p {
   padding-bottom: 50px; }
   .contact input {
     margin: 20px auto; }
+  .contact button {
+    background: #A2CA28; }
 
 footer {
   background: #0D1119;
@@ -163,14 +165,14 @@ footer {
   margin: 0; }
   footer a {
     border-bottom: 1px dotted white;
+    border-color: #A2CA28;
     color: white;
     cursor: pointer;
     text-decoration: none;
     transition: all .3s; }
     footer a:hover {
       border-bottom: none;
-      color: white;
-      opacity: .5;
+      color: #A2CA28;
       text-decoration: none; }
 
 .img-apple-watch {

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- TODO spyscroll and destinations to menu links-->
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -20,7 +19,7 @@
     <link rel="stylesheet" href="master.css">
     <title>Fitness</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#myNavbar" data-offset="100">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -33,18 +32,17 @@
           <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" height="30"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#" class="menu">services</a></li>
-            <li><a href="#" class="menu">How it works</a></li>
-            <li><a href="#" class="menu">faq</a></li>
-            <li><a href="#" class="menu">contact</a></li>
+          <ul class="nav navbar-nav navbar-right" role="tablist">
+            <li class="active"><a href="#home" class="menu">Home</a></li>
+            <li><a href="#features" class="menu">How it works</a></li>
+            <li><a href="#services" class="menu">services</a></li>
+            <li><a href="#contact" class="menu">contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- SECTION HEADER -->
-    <header>
+    <header id="home">
       <div class="jumbotron img-hero">
         <div class="container">
           <div class="slogan">
@@ -56,7 +54,7 @@
       </div>
     </header>
     <!-- SECTION FEATURES-->
-    <section class="features">
+    <section class="features" id="features">
       <div class="container">
         <div class="row text-center">
           <div class="col-sm-8 col-sm-offset-2 col-md-3">
@@ -83,7 +81,7 @@
       </div>
     </section>
     <!-- SERVICES GREEN -->
-    <section class="services bg-green">
+    <section class="services bg-green" id="services">
       <div class="container">
         <!--1st ROW -->
         <div class="row">
@@ -170,11 +168,8 @@
             </div>
           </div>
         </div> <!--DOUBLE ROW -->
-
-
       </div> <!-- CONTAINER -->
     </section>
-
     <!-- PROMO-->
     <section class="promo img-footer text-center">
       <div class="text">
@@ -186,10 +181,8 @@
       <div class="overlay-promo-2"></div>
       <div class="overlay-promo-3"></div>
     </section>
-
     <!-- CONTACT -->
-
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-4">
@@ -212,23 +205,13 @@
             </form>
           </div>
         </div>
-
-
       </div>
-
     </section>
-
     <!-- FOOTER -->
     <footer class="text-center text-white">
       <p class="text-white">Made with passion by <a href="">Fryderyk Grodziński</a></p>
     </footer>
-
-
-
-
-
-
-
+    <!-- SCRIPT -->
     <script src="script.js"></script>
   </body>
 </html>

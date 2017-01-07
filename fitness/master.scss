@@ -13,6 +13,7 @@ body {
   background: $color-secondary;
   font-family: $font-primary;
   margin: 0;
+  position: relative;
 }
 
 h1 { font-size: 40px; }
@@ -31,8 +32,19 @@ p { font-size: 14px; }
 .bg-orange { background: $color-secondary;}
 
 .navbar {
-  background: $color-dark;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
   text-transform: uppercase;
+
+  li {
+    a {
+      color: $color-text-light !important;
+    }
+
+    &.active a {
+      background: $color-primary !important;
+    }
+  }
 }
 
 .jumbotron {
@@ -47,12 +59,17 @@ p { font-size: 14px; }
 
   .slogan {
     bottom: 200px;
-    left: 10%;
-    letter-spacing: .2em;
+    left: 20%;
     position: absolute;
     text-align: right;
+    font-size: 150%;
+
+    @media(max-width: 551px) {
+      left: 5%;
+    }
 
     h4 {
+      letter-spacing: .15em;
       position: relative;
       right: 10%;
     }
@@ -74,27 +91,31 @@ p { font-size: 14px; }
   background: $color-primary;
   color: $color-text-light;
   margin: 0;
-  padding-bottom: 50px;
   min-height: 350px;
+  padding-bottom: 50px;
 
   i {
     font-size: 60px;
     padding: 60px 0 30px;
   }
-
 }
 
-[class*='col-*'] {
-  height: 100%;
-}
-
-.right {
-  float: right;
-}
+//[class*='col-*'] {
+  //height: 100%;
+//}
 
 // SERVICES
 .services {
-  .row {
+  .text-panel {
+    height: 50vh;
+    max-height: 400px;
+    min-height: 350px;
+    padding: 80px 5%;
+  }
+
+  .image {
+    height: 50vh;
+    max-height: 400px;
     min-height: 350px;
   }
 
@@ -105,18 +126,6 @@ p { font-size: 14px; }
   p {
     padding: 20px 0;
   }
-}
-
-.text-panel {
-  height: 50vh;
-  max-height: 400px;
-  min-height: 350px;
-  padding: 80px 5%;
-}
-.image {
-  height: 50vh;
-  max-height: 400px;
-  min-height: 350px;
 }
 
 .services-orange {
@@ -168,7 +177,6 @@ p { font-size: 14px; }
     transform-origin: right;
     width: 100%;
   }
-
 }
 
 .contact {
@@ -177,6 +185,10 @@ p { font-size: 14px; }
 
   input {
     margin: 20px auto;
+  }
+
+  button {
+    background: $color-primary;
   }
 }
 
@@ -188,6 +200,7 @@ footer {
 
   a {
     border-bottom: 1px dotted $color-text-light;
+    border-color: $color-primary;
     color: $color-text-light;
     cursor: pointer;
     text-decoration: none;
@@ -195,8 +208,7 @@ footer {
 
     &:hover {
       border-bottom: none;
-      color: $color-text-light;
-      opacity: .5;
+      color: $color-primary;
       text-decoration: none;
     }
   }
@@ -210,6 +222,7 @@ footer {
 .img-jogging { background: url('img/jogging.jpg') center/cover; }
 .img-self-involved { background: url('img/self-involved.jpg') center/cover; }
 .img-yoga { background: url('img/yoga.jpg') center/cover; }
+
 
 @media (min-width: 991px) {
   .pull-right-md {
