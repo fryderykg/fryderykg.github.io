@@ -26,4 +26,17 @@ $(document).ready(function(){
         } // End if
         $('button#nav-bar-button:not(:hidden)').click();
     });
+
+    $(window).scroll(function() {
+        var y_scroll_pos = window.pageYOffset;
+        var scroll_pos_test = 150;
+
+        if(y_scroll_pos > scroll_pos_test) {
+            $(".navbar").css("background","rgba(0, 0, 0, 0.8)");
+        }
+        else
+        {
+            $(".navbar").css("background","transparent");
+        }
+    });
 });

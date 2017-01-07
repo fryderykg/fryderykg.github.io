@@ -32,18 +32,14 @@ p { font-size: 14px; }
 .bg-orange { background: $color-secondary;}
 
 .navbar {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.0);
   border: none;
   text-transform: uppercase;
 
   li {
-    a {
-      color: $color-text-light !important;
-    }
-
-    &.active a {
-      background: $color-primary !important;
-    }
+    &:hover a { background: $color-secondary !important; }
+    &.active a { background: $color-primary !important; }
+    a { color: $color-text-light !important; }
   }
 }
 
@@ -99,10 +95,6 @@ p { font-size: 14px; }
     padding: 60px 0 30px;
   }
 }
-
-//[class*='col-*'] {
-  //height: 100%;
-//}
 
 // SERVICES
 .services {

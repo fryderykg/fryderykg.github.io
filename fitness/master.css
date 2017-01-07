@@ -48,13 +48,15 @@ p {
   background: #FD634E; }
 
 .navbar {
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
   border: none;
   text-transform: uppercase; }
-  .navbar li a {
-    color: white !important; }
+  .navbar li:hover a {
+    background: #FD634E !important; }
   .navbar li.active a {
     background: #A2CA28 !important; }
+  .navbar li a {
+    color: white !important; }
 
 .jumbotron {
   color: white;
