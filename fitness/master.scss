@@ -32,7 +32,7 @@ p { font-size: 14px; }
 .bg-orange { background: $color-secondary;}
 
 .navbar {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   text-transform: uppercase;
 
@@ -141,6 +141,8 @@ p { font-size: 14px; }
   h2 {
     margin: 0;
   }
+
+  p { padding: 20px 10%; }
 
   .text {
     position: relative;
