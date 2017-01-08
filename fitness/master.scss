@@ -35,11 +35,15 @@ p { font-size: 14px; }
   background: rgba(0, 0, 0, 0.0);
   border: none;
   text-transform: uppercase;
+  transition: all 1s ease-in-out;
 
   li {
     &:hover a { background: $color-secondary !important; }
     &.active a { background: $color-primary !important; }
-    a { color: $color-text-light !important; }
+    a {
+      color: $color-text-light !important;
+      transition: all .5s;
+    }
   }
 }
 

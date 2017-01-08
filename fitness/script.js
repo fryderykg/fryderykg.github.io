@@ -34,8 +34,7 @@ $(document).ready(function(){
         if(y_scroll_pos > scroll_pos_test) {
             $(".navbar").css("background","rgba(0, 0, 0, 0.8)");
         }
-        else
-        {
+        else {
             $(".navbar").css("background","transparent");
         }
     });
