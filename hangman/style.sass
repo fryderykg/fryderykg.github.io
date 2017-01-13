@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Ubuntu+Mono&subset=latin-ext')
+
+@mixin change_color($red, $green, $blue)
+  background: rgba($red, $green, $blue, 0.2)
+  border-color: rgba($red, $green, $blue, 0.8)
+  color: rgba($red, $green, $blue, 0.8)
+
+*
+  box-sizing: border-box
+
+body
+  background: #333
+  color: #FFF
+  //font-family: 'Ubuntu Mono', monospace
+  font-family: 'Source Code Pro', monospace
+
+
+.clearfix
+  clear: both
+
+.container
+  max-width: 900px
+  margin: 100px auto
+  text-align: center
+
+.board
+  //border: 1px solid #999999
+  max-width: 900px
+  margin: 0 auto
+
+
+  &#secretMessage
+    font-size: 24px
+    min-height: 200px
+    padding: 50px
+    text-transform: uppercase
+    letter-spacing: .2em
+
+  &#hangmanPic,
+  &#alphabet
+    float: left
+    height: 280px
+    width: 450px
+    img
+      height: 100%
+    @media(max-width: 910px)
+      float: none
+
+  &#alphabet
+    padding: 10px 0 0 20px
+    button
+      display: block
+      margin: 0 auto
+
+.letter
+  width: 40px
+  height: 40px
+  font-size: 22px
+  line-height: 22px
+  border-radius: 30%
+  text-align: center
+  padding: 9px
+  margin: 5px
+  border: 2px solid gray
+  float: left
+  cursor: pointer
+  &:hover
+    background: #222
+    color: #FFFFFF
+    border: 3px solid #fff
+  &.correct
+    @include change_color(0, 200, 0)
+    cursor: not-allowed
+    border-width: 2px
+  &.wrong
+    @include change_color(200, 0, 0)
+    cursor: not-allowed
+    border-width: 2px

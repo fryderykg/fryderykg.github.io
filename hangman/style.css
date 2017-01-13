@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro|Ubuntu+Mono&subset=latin-ext");
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #333;
+  color: #FFF;
+  font-family: "Source Code Pro", monospace; }
+
+.clearfix {
+  clear: both; }
+
+.container {
+  max-width: 900px;
+  margin: 100px auto;
+  text-align: center; }
+
+.board {
+  max-width: 900px;
+  margin: 0 auto; }
+  .board#secretMessage {
+    font-size: 24px;
+    min-height: 200px;
+    padding: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em; }
+  .board#hangmanPic, .board#alphabet {
+    float: left;
+    height: 280px;
+    width: 450px; }
+    .board#hangmanPic img, .board#alphabet img {
+      height: 100%; }
+@media(max-width: 910px) {
+  .board#hangmanPic, .board#alphabet {
+    float: none; } }
+  .board#alphabet {
+    padding: 10px 0 0 20px; }
+    .board#alphabet button {
+      display: block;
+      margin: 0 auto; }
+
+.letter {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  line-height: 22px;
+  border-radius: 30%;
+  text-align: center;
+  padding: 9px;
+  margin: 5px;
+  border: 2px solid gray;
+  float: left;
+  cursor: pointer; }
+  .letter:hover {
+    background: #222;
+    color: #FFFFFF;
+    border: 3px solid #fff; }
+  .letter.correct {
+    background: rgba(0, 200, 0, 0.2);
+    border-color: rgba(0, 200, 0, 0.8);
+    color: rgba(0, 200, 0, 0.8);
+    cursor: not-allowed;
+    border-width: 2px; }
+  .letter.wrong {
+    background: rgba(200, 0, 0, 0.2);
+    border-color: rgba(200, 0, 0, 0.8);
+    color: rgba(200, 0, 0, 0.8);
+    cursor: not-allowed;
+    border-width: 2px; }
+
+/*# sourceMappingURL=style.css.map */
