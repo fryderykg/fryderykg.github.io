@@ -5,8 +5,8 @@
 // HANGMAN OBJECT
 var hangman = {
     alphabet: "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż",
-    message: "",
-    messages: ["bez pracy nie ma kołaczy",
+    word: "",
+    words: ["bez pracy nie ma kołaczy",
                "nie ma róży bez ognia",
                "leon zawodowiec",
                 "cel uświęca środki",
@@ -16,7 +16,7 @@ var hangman = {
                 "do trzech razy sztuka",
                 "komu w drogę temu czas",
                 "lepiej późno niż wcale"],
-    message_hidden: "",
+    word_hidden: "",
     mistake_number: 0,
     sound_yes: new Audio("sounds/yes.wav"),
     sound_no: new Audio("sounds/no.wav"),
@@ -26,59 +26,59 @@ var hangman = {
     incrementMistakeNumber: function() {
         this.mistake_number++;
     },
+
     // MESSAGE METHOD
-    /** Set random message from messages */
-    setMessage: function() {
-        this.message = this.messages[Math.floor(Math.random() * this.messages.length)];
+    /** Set random word from words */
+    setWord: function() {
+        this.word = this.words[Math.floor(Math.random() * this.words.length)];
     },
 
-    /** Display hidden message on screen*/
-    displayMessage: function() {
-        document.getElementById("secretMessage").innerHTML = '<p>' + this.message_hidden + '</p>';
+    /** Display hidden word on screen*/
+    displayHiddenWord: function() {
+        document.getElementById("secretMessage").innerHTML = '<p>' + this.word_hidden + '</p>';
     },
 
-    getMessageLength: function() {
-        return this.message.length;
+    getWordLength: function() {
+        return this.word.length;
     },
 
-    /** Change letter in message to underscores */
-    hideMessage: function() {
-        for(var i = 0; i < this.message.length; i++) {
-            if (this.message.charAt(i) !== " ") {
-                this.message_hidden += "_";
-            }
-            else {
-                this.message_hidden += " ";
+    /** Change letter in word to underscores */
+    hideWord: function() {
+        for(var i = 0; i < this.word.length; i++) {
+            if (this.word.charAt(i) !== " ") {
+                this.word_hidden += "_";
+            } else {
+                this.word_hidden += " ";
             }
         }
     },
 
     /** Return letter at position number */
-    getMessageLetter: function(number) {
-        return this.message.charAt(number).toLowerCase();
+    getWordCharAt: function(number) {
+        return this.word.charAt(number).toLowerCase();
     },
 
-    /** Make visible guessed letter in message_hidden  */
-    showMessageLetter: function(pos, letter_num) {
-        var first = this.message_hidden.slice(0, pos);
+    /** Make visible guessed letter in word_hidden  */
+    showWordLetter: function(pos, letter_num) {
+        var first = this.word_hidden.slice(0, pos);
         var letter = this.alphabet.charAt(letter_num);
-        var last = this.message_hidden.slice(pos + 1);
+        var last = this.word_hidden.slice(pos + 1);
         return first + letter + last;
     },
 
-    /** Return message */
-    getMessage: function() {
-        return this.message
+    /** Return word */
+    getWord: function() {
+        return this.word;
     },
 
-    /** Return message_hidden */
-    getMessageHidden: function() {
-        return this.message_hidden
+    /** Return word_hidden */
+    getWordHidden: function() {
+        return this.word_hidden;
     },
 
-    /** Set new message_hidden */
-    setMessageHidden: function(newMessageHidden) {
-        this.message_hidden = newMessageHidden;
+    /** Set new word_hidden */
+    setWordHidden: function(newMessageHidden) {
+        this.word_hidden = newMessageHidden;
     },
 
     // PICTURE METHOD
@@ -87,8 +87,7 @@ var hangman = {
         if (this.mistake_number >= 9) {
             document.getElementById("hangmanPic").innerHTML = '<img src="pics/hangman' + this.mistake_number +'.png" alt="hangman pic">';
             document.getElementById("alphabet").innerHTML = 'Przegrałeś<button onclick="start()">Jeszcze raz?</button>';
-        }
-        else {
+        } else {
             document.getElementById("hangmanPic").innerHTML = '<img src="pics/hangman' + this.mistake_number +'.png" alt="hangman pic">';
         }
     },
@@ -98,10 +97,10 @@ var hangman = {
     displayAlphabet: function() {
         var alphabetContent = "";
 
-        for (var i = 0; i < 35; i++) {
-            var onClickElem = "letter" + i;
-            alphabetContent += '<div class="letter" onclick="check('+ i +')" id="' + onClickElem + '">' + this.alphabet.charAt(i).toUpperCase() + '</div>';
-            if ((i + 1) % 7 == 0) {
+        for (var i = 0; i < this.alphabet.length; i++) {
+            var idName = "letter" + i;
+            alphabetContent += '<div class="letter" id="' + idName + '">' + this.alphabet.charAt(i).toUpperCase() + '</div>';
+            if ((i + 1) % 7 === 0) {
                 alphabetContent += '<div class="clearfix"></div>';
             }
         }
@@ -118,67 +117,79 @@ var hangman = {
     playSound: function(sound) {
         if (sound === "yes"){
             this.sound_yes.play();
-        }
-        else if (sound === "no") {
+        } else if (sound === "no") {
             this.sound_no.play();
-        }
-        else {
-        //    do nothing
+        } else {
+            window.console.log("Wrong audio file");
         }
     },
 
     reset: function() {
-        this.message_hidden = "";
+        this.word_hidden = "";
         this.mistake_number = 0;
     }
-}; // End of hangman object
+};
 
+// EVENT LISTENERS
+function addListeners() {
+    for (var i = 0; i < hangman.alphabet.length; i++){
+        var object = document.getElementById(("letter" + i));
+        object.addEventListener("click", check);
+    }
+}
 
 // MAIN FUNCTION
 function start() {
     hangman.reset();
-    hangman.setMessage();
-    hangman.hideMessage();
+    hangman.setWord();
+    hangman.hideWord();
     // CREATE BOARD
     hangman.displayAlphabet();
     hangman.displayPicture();
-    hangman.displayMessage();
+    hangman.displayHiddenWord();
+    // EVENT LISTENERS
+    addListeners();
 }
 
-// Check if letter is in the message
-function check(letter_number) {
+// CHECK IF LETTER IS IN THE WORD
+function check() {
+    var letter_number = parseInt(this.id.slice(6));
     var letterInMessage = false;
-    for(var i = 0; i < hangman.getMessageLength(); i++) {
-        if(hangman.getMessageLetter(i) == hangman.getAlphabetLetter(letter_number)) {
+
+    this.removeEventListener("click", check);
+
+    for(var i = 0; i < hangman.getWordLength(); i++) {
+        //  Compare word letter at position "i" to alphabet letter at position "letter_number"
+        if (hangman.getWordCharAt(i) === hangman.getAlphabetLetter(letter_number)) {
             letterInMessage = true;
-            hangman.setMessageHidden(hangman.showMessageLetter(i, letter_number));
+            // Put revealed letter into word_hidden
+            hangman.setWordHidden(hangman.showWordLetter(i, letter_number));
         }
     }
+
     if (letterInMessage) {
         hangman.playSound("yes");
         //Change color to green
         document.getElementById("letter" + letter_number).className += " correct";
         // Disable onclick function
         document.getElementById("letter" + letter_number).setAttribute("onclick",";");
-
-    }
-    else {
+    } else {
         hangman.playSound("no");
         // Change color to red
         document.getElementById("letter" + letter_number).className += " wrong";
         // Disable onclick function
         document.getElementById("letter" + letter_number).setAttribute("onclick",";");
-        // Ad one to mistake number
+        // Add one to mistake number
         hangman.incrementMistakeNumber();
         // Refresh picture
         hangman.displayPicture();
-
     }
-    // Refresh message
-    hangman.displayMessage();
+
+    // Refresh word
+    hangman.displayHiddenWord();
 
     // Check if player find the answer
-    if(hangman.getMessage() === hangman.getMessageHidden()) {
+    if (hangman.getWord() === hangman.getWordHidden()) {
         document.getElementById("alphabet").innerHTML = 'GRATULACJE WYGRAŁEŚ<button onclick="start()">Jeszcze raz?</button>';
     }
 }
