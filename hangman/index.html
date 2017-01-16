@@ -3,18 +3,49 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Hangman Game</title>
   </head>
   <body>
-  <div class="container">
-    <div class="board" id="secretMessage"></div>
-    <div class="board" id="hangmanPic"></div>
-    <div class="board" id="alphabet"></div>
-  </div>
+    <div class="container">
+      <header class="row">
+        <h1>Wisielec</h1>
 
+      </header>
+      <div class="row">
+        <p class="remainingChances">Pozostałe szanse: <span id="remainingChances"></span></p>
+        <p class="score">Wynik: <span id="score"></span></p>
+      </div>
+      <div class="row">
+          <div class="" id="secretWord"></div>
+      </div>
+      <div class="row pictureAndAlphabet">
+          <div id="hangmanPic">
+            <img src="pics/hangman0.png" alt="hangman 0 pics">
+            <img class="opacityZero" id="pic1" src="pics/hangman1.png" alt="hangman 1 pics">
+            <img class="opacityZero" id="pic2" src="pics/hangman2.png" alt="hangman 2 pics">
+            <img class="opacityZero" id="pic3" src="pics/hangman3.png" alt="hangman 3 pics">
+            <img class="opacityZero" id="pic4" src="pics/hangman4.png" alt="hangman 4 pics">
+            <img class="opacityZero" id="pic5" src="pics/hangman5.png" alt="hangman 5 pics">
+            <img class="opacityZero" id="pic6" src="pics/hangman6.png" alt="hangman 6 pics">
+            <img class="opacityZero" id="pic7" src="pics/hangman7.png" alt="hangman 7 pics">
+            <img class="opacityZero" id="pic8" src="pics/hangman8.png" alt="hangman 8 pics">
+            <img class="opacityZero" id="pic9" src="pics/hangman9.png" alt="hangman 9 pics">
+          </div>
+          <div class="" id="alphabet"></div>
+          <div class="hidden" id="message_lost">
+            <p>Przegrałeś</p>
+            <button onclick="start()">Jeszcze raz?</button>
+          </div>
+          <div class="hidden" id="message_win">
+            <p>GRATULACJE WYGRAŁEŚ</p>
+            <button onclick="start()">Jeszcze raz?</button>
+          </div>
+
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
