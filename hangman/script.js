@@ -18,13 +18,36 @@ var hangman = {
                 "lepiej późno niż wcale"],
     word_hidden: "",
     mistake_number: 0,
+    remaining_chances: 0,
+    score: 0,
     sound_yes: new Audio("sounds/yes.wav"),
-    sound_no: new Audio("sounds/no.wav"),
+    sound_no: new Audio("sounds/no.mp3"),
 
     // MISTAKE NUMBER METHOD
      /** Add 1 to mistake number */
     incrementMistakeNumber: function() {
         this.mistake_number++;
+        this.remaining_chances --;
+    },
+
+    // REMAINING CHANCES METHOD
+    displayRemainingChances: function() {
+        document.getElementById("remainingChances").innerHTML = this.remaining_chances.toString();
+    },
+
+    // POINTS METHODS
+    displayScore: function() {
+        document.getElementById("score").innerHTML = this.score.toString();
+    },
+
+    incrementScore: function() {
+        this.score++;
+        window.console.log("score++");
+    },
+
+    resetScore: function() {
+        this.score = 0;
+        window.console.log("scoreReset");
     },
 
     // MESSAGE METHOD
@@ -35,7 +58,7 @@ var hangman = {
 
     /** Display hidden word on screen*/
     displayHiddenWord: function() {
-        document.getElementById("secretMessage").innerHTML = '<p>' + this.word_hidden + '</p>';
+        document.getElementById("secretWord").innerHTML = '<p>' + this.word_hidden + '</p>';
     },
 
     getWordLength: function() {
@@ -83,13 +106,25 @@ var hangman = {
 
     // PICTURE METHOD
     /** Display hangman picture on the screen according to mistake number*/
-    displayPicture: function() {
+    displayNextPicture: function() {
+        var picture_id = "pic" + this.mistake_number;
         if (this.mistake_number >= 9) {
-            document.getElementById("hangmanPic").innerHTML = '<img src="pics/hangman' + this.mistake_number +'.png" alt="hangman pic">';
-            document.getElementById("alphabet").innerHTML = 'Przegrałeś<button onclick="start()">Jeszcze raz?</button>';
+            this.resetScore();
+            document.getElementById(picture_id).className = "";
+            document.getElementById("alphabet").className += "hidden";
+            document.getElementById("message_lost").className = "";
         } else {
-            document.getElementById("hangmanPic").innerHTML = '<img src="pics/hangman' + this.mistake_number +'.png" alt="hangman pic">';
+            document.getElementById(picture_id).className = "";
+            if (this.mistake_number === 4) {
+                document.getElementById("pic3").className = "opacityZero";
+            }
         }
+    },
+
+    hidePictures: function() {
+      for (var i = 1; i < 10; i++){
+          document.getElementById("pic" + i).className = "opacityZero";
+      }
     },
 
     // ALPHABET METHOD
@@ -100,9 +135,6 @@ var hangman = {
         for (var i = 0; i < this.alphabet.length; i++) {
             var idName = "letter" + i;
             alphabetContent += '<div class="letter" id="' + idName + '">' + this.alphabet.charAt(i).toUpperCase() + '</div>';
-            if ((i + 1) % 7 === 0) {
-                alphabetContent += '<div class="clearfix"></div>';
-            }
         }
         document.getElementById("alphabet").innerHTML = alphabetContent;
     },
@@ -125,8 +157,13 @@ var hangman = {
     },
 
     reset: function() {
+        this.hidePictures();
         this.word_hidden = "";
         this.mistake_number = 0;
+        this.remaining_chances = 9;
+        document.getElementById("alphabet").className = "";
+        document.getElementById("message_lost").className = "hidden";
+        document.getElementById("message_win").className = "hidden";
     }
 };
 
@@ -145,8 +182,9 @@ function start() {
     hangman.hideWord();
     // CREATE BOARD
     hangman.displayAlphabet();
-    hangman.displayPicture();
     hangman.displayHiddenWord();
+    hangman.displayRemainingChances();
+    hangman.displayScore();
     // EVENT LISTENERS
     addListeners();
 }
@@ -182,15 +220,21 @@ function check() {
         // Add one to mistake number
         hangman.incrementMistakeNumber();
         // Refresh picture
-        hangman.displayPicture();
+        hangman.displayNextPicture();
     }
 
     // Refresh word
     hangman.displayHiddenWord();
+    hangman.displayRemainingChances();
 
     // Check if player find the answer
     if (hangman.getWord() === hangman.getWordHidden()) {
-        document.getElementById("alphabet").innerHTML = 'GRATULACJE WYGRAŁEŚ<button onclick="start()">Jeszcze raz?</button>';
+        hangman.incrementScore();
+        hangman.displayScore();
+        /** hide alphabet*/
+        document.getElementById("alphabet").className += "hidden";
+        /** show message win */
+        document.getElementById("message_win").className = "";
     }
 }
 
