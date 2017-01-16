@@ -27,6 +27,7 @@ header {
     font-size: 3em;
     text-transform: uppercase;
     flex: 6;
+    margin: 20px auto 10px;
     text-align: center;
     text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black; }
 
@@ -39,8 +40,7 @@ header {
 #secretWord {
   font-size: 24px;
   letter-spacing: 0.2em;
-  min-height: 200px;
-  padding: 50px;
+  padding: 20px;
   text-transform: uppercase;
   width: 100%; }
 
@@ -81,9 +81,9 @@ header {
   border: 2px solid gray;
   cursor: pointer;
   box-shadow: 1px 3px 5px black;
-  width: 40px;
   height: 40px;
-  margin: 5px; }
+  margin: 5px;
+  width: 40px; }
   .letter:hover {
     background: #222;
     border: 3px solid #fff;
