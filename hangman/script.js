@@ -6,16 +6,7 @@
 var hangman = {
     alphabet: "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż",
     word: "",
-    words: ["bez pracy nie ma kołaczy",
-               "nie ma róży bez ognia",
-               "leon zawodowiec",
-                "cel uświęca środki",
-                "co dwie głowy to nie jedna",
-                "co za dużo to nie zdrowo",
-                "dla chcącego nic trudnego",
-                "do trzech razy sztuka",
-                "komu w drogę temu czas",
-                "lepiej późno niż wcale"],
+    words: [],
     word_hidden: "",
     mistake_number: 0,
     remaining_chances: 0,
@@ -42,7 +33,6 @@ var hangman = {
 
     incrementScore: function() {
         this.score++;
-        window.console.log("score++");
     },
 
     resetScore: function() {
@@ -50,7 +40,7 @@ var hangman = {
         window.console.log("scoreReset");
     },
 
-    // MESSAGE METHOD
+    // WORD METHOD
     /** Set random word from words */
     setWord: function() {
         this.word = this.words[Math.floor(Math.random() * this.words.length)];
@@ -100,8 +90,8 @@ var hangman = {
     },
 
     /** Set new word_hidden */
-    setWordHidden: function(newMessageHidden) {
-        this.word_hidden = newMessageHidden;
+    setWordHidden: function(newWordHidden) {
+        this.word_hidden = newWordHidden;
     },
 
     // PICTURE METHOD
@@ -237,6 +227,24 @@ function check() {
         document.getElementById("message_win").className = "";
     }
 }
+
+// LOAD WORDS LIST
+function loadJSON(file, callback) {
+    var raw = new XMLHttpRequest();
+    raw.overrideMimeType('application/json');
+    raw.open('GET', file, true);
+    raw.onreadystatechange = function() {
+        if (raw.readyState === 4 && raw.status === 200) {
+            callback(raw.responseText);
+        }
+    };
+    raw.send(null);
+}
+
+loadJSON("./words.json", function(text){
+    hangman.words = JSON.parse(text).words;
+});
+
 
 // start the game
 window.onload = start;
