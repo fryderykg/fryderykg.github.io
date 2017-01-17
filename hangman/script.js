@@ -8,6 +8,7 @@ var hangman = {
     word: "",
     words: [],
     word_hidden: "",
+    language: "",
     mistake_number: 0,
     remaining_chances: 0,
     score: 0,
@@ -37,13 +38,12 @@ var hangman = {
 
     resetScore: function() {
         this.score = 0;
-        window.console.log("scoreReset");
     },
 
     // WORD METHOD
     /** Set random word from words */
     setWord: function() {
-        this.word = this.words[Math.floor(Math.random() * this.words.length)];
+        this.word = this.words[Math.floor(Math.random() * this.words.length)].toLowerCase();
     },
 
     /** Display hidden word on screen*/
@@ -68,7 +68,7 @@ var hangman = {
 
     /** Return letter at position number */
     getWordCharAt: function(number) {
-        return this.word.charAt(number).toLowerCase();
+        return this.word.charAt(number);
     },
 
     /** Make visible guessed letter in word_hidden  */
@@ -81,7 +81,7 @@ var hangman = {
 
     /** Return word */
     getWord: function() {
-        return this.word;
+        return this.word.toLowerCase();
     },
 
     /** Return word_hidden */
@@ -165,20 +165,6 @@ function addListeners() {
     }
 }
 
-// MAIN FUNCTION
-function start() {
-    hangman.reset();
-    hangman.setWord();
-    hangman.hideWord();
-    // CREATE BOARD
-    hangman.displayAlphabet();
-    hangman.displayHiddenWord();
-    hangman.displayRemainingChances();
-    hangman.displayScore();
-    // EVENT LISTENERS
-    addListeners();
-}
-
 // CHECK IF LETTER IS IN THE WORD
 function check() {
     var letter_number = parseInt(this.id.slice(6));
@@ -228,7 +214,7 @@ function check() {
     }
 }
 
-// LOAD WORDS LIST
+// LOAD WORDS LIST FROM JSON
 function loadJSON(file, callback) {
     var raw = new XMLHttpRequest();
     raw.overrideMimeType('application/json');
@@ -241,10 +227,67 @@ function loadJSON(file, callback) {
     raw.send(null);
 }
 
-loadJSON("./words.json", function(text){
-    hangman.words = JSON.parse(text).words;
-});
+// LANGUAGE SELECTION
 
+function changeClassesName(elements, addOrRemove, newClassName) {
+    var i;
+    if (addOrRemove === "add") {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].classList.add(newClassName);
+        }
+    } else if (addOrRemove === "remove") {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].classList.remove(newClassName);
+        }
+    }
+}
 
-// start the game
-window.onload = start;
+function languageSelect(lang) {
+    document.getElementById("header").className = "hide";
+    document.getElementById("board").className = "";
+    var elements_uk = document.getElementsByClassName("lang_uk");
+    var elements_pl = document.getElementsByClassName("lang_pl");
+
+    if (lang === "pol") {
+        hangman.language = "pol";
+        // HIDE ELEMENTS IN ENGLISH
+        changeClassesName(elements_uk, "add", "hidden");
+        changeClassesName(elements_pl, "remove", "hidden");
+        document.getElementById("slash").className = "hidden";
+        // LOAD POLISH WORDS
+        loadJSON("./words.json", function(text){
+            hangman.words = JSON.parse(text).words.pol;
+            // START THE GAME
+            start();
+        });
+
+    } else if (lang === "uk") {
+        hangman.language = "uk";
+        // HIDE ELEMENTS IN POLISH
+        changeClassesName(elements_uk, "remove", "hidden");
+        changeClassesName(elements_pl, "add", "hidden");
+        document.getElementById("slash").className = "hidden";
+        // LOAD ENGLISH WORDS
+        loadJSON("./words.json", function(text){
+            hangman.words = JSON.parse(text).words.uk;
+            // START THE GAME
+            start();
+        });
+    }
+    // Reset score when change language
+    hangman.score = 0;
+}
+
+// MAIN FUNCTION
+function start() {
+    hangman.reset();
+    hangman.setWord();
+    hangman.hideWord();
+    // CREATE BOARD
+    hangman.displayAlphabet();
+    hangman.displayHiddenWord();
+    hangman.displayRemainingChances();
+    hangman.displayScore();
+    // EVENT LISTENERS
+    addListeners();
+}
