@@ -6,7 +6,8 @@ body {
   background: #333;
   background: url("http://www.lannathai.ca/wp-content/uploads/2014/12/bigstock-Blank-Chalkboard-Blackboard-T-50893607.jpg");
   color: #FFF;
-  font-family: "Source Code Pro", monospace; }
+  font-family: "Source Code Pro", monospace;
+  margin: 0; }
 
 .row {
   display: flex;
@@ -21,15 +22,41 @@ body {
   display: none !important; }
 
 header {
-  align-items: center;
-  justify-content: space-between; }
+  justify-content: center;
+  height: 100vh;
+  transition: 2s all; }
+  header.hide {
+    height: 180px; }
+    header.hide .flags {
+      transform: translateY(-200px);
+      transition: 2s all; }
+      header.hide .flags .flag_pol {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(-120px); }
+      header.hide .flags .flag_uk {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(120px); }
+    header.hide p {
+      opacity: 0;
+      transition: 2s all; }
   header h1 {
     font-size: 3em;
-    text-transform: uppercase;
-    flex: 6;
-    margin: 20px auto 10px;
+    margin: 0 auto;
+    padding: 50px 30px;
     text-align: center;
-    text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black; }
+    text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
+    text-transform: uppercase; }
+  header .flags a {
+    border-radius: 20px; }
+  header .flags img {
+    border-radius: 20px;
+    height: 50px;
+    margin: 50px 100px; }
+
+#board {
+  transition: all 2s; }
 
 .remainingChances {
   flex: 1; }
@@ -51,15 +78,15 @@ header {
   opacity: 0; }
 
 #hangmanPic {
-  text-align: center;
   max-width: 456px;
   min-width: 456px;
   min-height: 285px;
-  position: relative; }
+  position: relative;
+  text-align: center; }
   #hangmanPic img {
-    position: absolute;
-    left: 0;
     height: 100%;
+    left: 0;
+    position: absolute;
     transition: all 1.5s; }
 
 #hangmanPic,
@@ -135,10 +162,35 @@ header {
 
 /* For tablets: */
 @media (max-width: 767px) {
-  header img {
-    display: none; }
   header h1 {
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    padding: 20px; }
+  header .flags a {
+    border-radius: 20px; }
+  header .flags img {
+    border-radius: 20px;
+    height: 50px;
+    margin: 50px 40px;
+    transition: 2s; }
+  header.hide {
+    height: 80px; }
+    header.hide .flags {
+      transition: 2s all;
+      transform: translateY(-120px); }
+      header.hide .flags .flag_pol {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(-50px); }
+      header.hide .flags .flag_uk {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(50px); }
+      header.hide .flags img {
+        margin: 10px 10px;
+        transition: 2s;
+        transform: scale(0.7); }
+    header.hide p {
+      transform: translateY(0px); }
 
   #secretWord {
     font-size: 1em;
