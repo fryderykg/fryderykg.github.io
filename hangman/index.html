@@ -10,40 +10,65 @@
   </head>
   <body>
     <div class="container">
-      <header class="row">
-        <h1>Wisielec</h1>
-
+      <header class="" id="header">
+        <h1><span class="lang_pl">WISIELEC</span><span class="" id="slash"> / </span><span class="lang_uk">HANGMAN</span></h1>
+        <p>Wybierz język / Choose language</p>
+        <div class="flags">
+          <a href="#" class="flag_pol" onclick="languageSelect('pol')"><img src="pics/pol.GIF" alt="poland flag"></a>
+          <a href="#" class="flag_uk" onclick="languageSelect('uk')"><img src="pics/uk.GIF" alt="uk flag"></a>
+        </div>
       </header>
-      <div class="row">
-        <p class="remainingChances">Pozostałe szanse: <span id="remainingChances"></span></p>
-        <p class="score">Wynik: <span id="score"></span></p>
-      </div>
-      <div class="row">
-          <div class="" id="secretWord"></div>
-      </div>
-      <div class="row pictureAndAlphabet">
-          <div id="hangmanPic">
-            <img src="pics/hangman0.png" alt="hangman 0 pics">
-            <img class="opacityZero" id="pic1" src="pics/hangman1.png" alt="hangman 1 pics">
-            <img class="opacityZero" id="pic2" src="pics/hangman2.png" alt="hangman 2 pics">
-            <img class="opacityZero" id="pic3" src="pics/hangman3.png" alt="hangman 3 pics">
-            <img class="opacityZero" id="pic4" src="pics/hangman4.png" alt="hangman 4 pics">
-            <img class="opacityZero" id="pic5" src="pics/hangman5.png" alt="hangman 5 pics">
-            <img class="opacityZero" id="pic6" src="pics/hangman6.png" alt="hangman 6 pics">
-            <img class="opacityZero" id="pic7" src="pics/hangman7.png" alt="hangman 7 pics">
-            <img class="opacityZero" id="pic8" src="pics/hangman8.png" alt="hangman 8 pics">
-            <img class="opacityZero" id="pic9" src="pics/hangman9.png" alt="hangman 9 pics">
-          </div>
-          <div class="" id="alphabet"></div>
-          <div class="hidden" id="message_lost">
-            <p>Przegrałeś</p>
-            <button onclick="start()">Jeszcze raz?</button>
-          </div>
-          <div class="hidden" id="message_win">
-            <p>GRATULACJE WYGRAŁEŚ</p>
-            <button onclick="start()">Jeszcze raz?</button>
-          </div>
-
+      <div class="opacityZero hidden" id="board">
+        <div class="row">
+          <p class="remainingChances">
+            <span class="lang_pl">Szanse: </span>
+            <span class="lang_uk">Chances: </span>
+            <span id="remainingChances"></span>
+          </p>
+          <p class="score">
+            <span class="lang_pl">Wynik:</span>
+            <span class="lang_uk">Score:</span>
+            <span id="score"></span>
+          </p>
+        </div>
+        <div class="row">
+            <div class="" id="secretWord"></div>
+        </div>
+        <div class="row pictureAndAlphabet">
+            <div id="hangmanPic">
+              <img src="pics/hangman0.png" alt="hangman 0 pics">
+              <img class="opacityZero" id="pic1" src="pics/hangman1.png" alt="hangman 1 pics">
+              <img class="opacityZero" id="pic2" src="pics/hangman2.png" alt="hangman 2 pics">
+              <img class="opacityZero" id="pic3" src="pics/hangman3.png" alt="hangman 3 pics">
+              <img class="opacityZero" id="pic4" src="pics/hangman4.png" alt="hangman 4 pics">
+              <img class="opacityZero" id="pic5" src="pics/hangman5.png" alt="hangman 5 pics">
+              <img class="opacityZero" id="pic6" src="pics/hangman6.png" alt="hangman 6 pics">
+              <img class="opacityZero" id="pic7" src="pics/hangman7.png" alt="hangman 7 pics">
+              <img class="opacityZero" id="pic8" src="pics/hangman8.png" alt="hangman 8 pics">
+              <img class="opacityZero" id="pic9" src="pics/hangman9.png" alt="hangman 9 pics">
+            </div>
+            <div class="" id="alphabet"></div>
+            <div class="hidden" id="message_lost">
+              <p>
+                <span class="lang_pl">PRZEGRAŁEŚ!</span>
+                <span class="lang_uk">YOU LOST!</span>
+              </p>
+              <button onclick="start()">
+                <span class="lang_pl">Jeszcze raz?</span>
+                <span class="lang_uk">Play again?</span>
+              </button>
+            </div>
+            <div class="hidden" id="message_win">
+              <p>
+                <span class="lang_pl">GRATULACJE, WYGRAŁEŚ!</span>
+                <span class="lang_uk">CONGRATULATION, YOU WIN!</span>
+              </p>
+              <button onclick="start()">
+                <span class="lang_pl">Jeszcze raz?</span>
+                <span class="lang_uk">Play again?</span>
+              </button>
+            </div>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
