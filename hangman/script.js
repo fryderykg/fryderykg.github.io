@@ -164,6 +164,11 @@ function addListeners() {
         object.addEventListener("click", check);
     }
 }
+// ADD EventListeners at script start
+document.getElementById("flag_pol").addEventListener("click", languageSelect);
+document.getElementById("flag_uk").addEventListener("click", languageSelect);
+document.getElementById("button_lost").addEventListener("click", start);
+document.getElementById("button_win").addEventListener("click", start);
 
 // CHECK IF LETTER IS IN THE WORD
 function check() {
@@ -228,7 +233,6 @@ function loadJSON(file, callback) {
 }
 
 // LANGUAGE SELECTION
-
 function changeClassesName(elements, addOrRemove, newClassName) {
     var i;
     if (addOrRemove === "add") {
@@ -242,13 +246,13 @@ function changeClassesName(elements, addOrRemove, newClassName) {
     }
 }
 
-function languageSelect(lang) {
+function languageSelect() {
     document.getElementById("header").className = "hide";
     document.getElementById("board").className = "";
     var elements_uk = document.getElementsByClassName("lang_uk");
     var elements_pl = document.getElementsByClassName("lang_pl");
 
-    if (lang === "pol") {
+    if (this.id === "flag_pol") {
         hangman.language = "pol";
         // HIDE ELEMENTS IN ENGLISH
         changeClassesName(elements_uk, "add", "hidden");
@@ -261,7 +265,7 @@ function languageSelect(lang) {
             start();
         });
 
-    } else if (lang === "uk") {
+    } else if (this.id === "flag_uk") {
         hangman.language = "uk";
         // HIDE ELEMENTS IN POLISH
         changeClassesName(elements_uk, "remove", "hidden");
