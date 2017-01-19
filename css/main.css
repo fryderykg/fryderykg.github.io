@@ -1,20 +1,61 @@
 @font-face {
   font-family: mensch;
   src: url("../font/mensch-wf.woff") format("woff"); }
-
 @font-face {
   font-family: mensch-bold;
   src: url("../font/mensch-bold-wf.woff"); }
-
 @font-face {
   font-family: mensch-inline;
   src: url("../font/mensch-inline-wf.woff"); }
-
 @font-face {
   font-family: mensch-thin;
   src: url("../font/mensch-thin-wf.woff"); }
-
 body {
   background: #a8c8ca url("../img/built/bg.png"); }
+
+header {
+  background: #7ac0c0; }
+
+.navbar-brand {
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%) scale(0.4); }
+
+.navbar {
+  margin-top: 50px;
+  background: inherit; }
+
+li {
+  text-align: center; }
+  li:nth-of-type(1) {
+    width: 20%; }
+  li:nth-of-type(2) {
+    width: 30%;
+    text-align: left; }
+  li:nth-of-type(3) {
+    width: 30%;
+    text-align: right; }
+  li:nth-of-type(4) {
+    width: 20%; }
+  li a {
+    color: #e6e1d0 !important;
+    font-family: mensch-bold, arial, sans-serif;
+    font-size: calc(1em + 1vw); }
+
+.navbar-nav {
+  width: 100%; }
+
+section {
+  height: 600px; }
+
+.portfolio {
+  background: #e68966; }
+
+.technologies {
+  background: #e6e1d0; }
+
+.contact {
+  background: #4c5057; }
 
 /*# sourceMappingURL=main.css.map */
