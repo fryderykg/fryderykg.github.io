@@ -16,21 +16,58 @@ $color-orange: #E37655
 $color-light-grey: lightgray
 $color-dark-grey: #4D4D4D
 $color-blue: #a8c8ca
+$color-red: #DF674A
+
+.container
+  padding: 0
 
 body
   background: $color-blue url("../img/built/bg.png")
 
+header
+  background: $color-beige url("../img/built/noise.png")
+
+  .logo
+    height: 200px
+  .navbar
+    background: url("../img/built/nav-top.png") repeat-x top left
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+    margin-bottom: 40px
+    ul
+      justify-content: space-around
+      width: 100%
+      li
+        margin: 10px 0 5px
+        text-align: center
+        transition: .5s all
+        transform: skewX(-25deg)
+        width: 22%
+        &:hover
+          background: $color-orange
+          span
+            color: white
+            text-shadow: 2px 2px 1px $color-dark-grey
+        a
+          color: $color-dark-grey
+          font-family: mensch, sans-serif
+          font-size: 1.4em
+          padding: 3px
+        span
+          display: block
+          transform: skewX(25deg)
+          transition: .3s all
+
 .slide1
-  height: 500px
-  background: url("http://placehold.it/1200x500") center /cover
+  background: url("../img/built/advertise_it_screen.jpg") top / cover
+  height: 400px
 
 .slide2
-  height: 500px
-  background: url("http://placehold.it/1200x500") center /cover
+  background: url("../img/built/photo_gallery_screen.jpg") top / cover
+  height: 400px
 
 .slide3
-  height: 500px
-  background: url("http://placehold.it/1200x500") center /cover
+  background: url("../img/built/photographer_page_screen.jpg") center / cover
+  height: 400px
 
 .carousel-icon-preview
   background: url("../img/built/arrows.png")
@@ -44,23 +81,21 @@ body
 
 .carousel-indicators
   li
-    //width: 20px
-    //max-width: 20px
-    //height: 20px
-    //margin: 20px
-    //cursor: pointer
-    //border-radius: 50%
-    //background: $color-light-grey
-    //&.active
-    //  background: $color-orange
-    //  background-size: 15px 15px
-    width: 27px
-    max-width: 27px
-    height: 27px
-    margin: 20px
-    cursor: pointer
+    background: $color-light-grey
     border-radius: 50%
-    background: url("../img/built/bullets.png")
+    cursor: pointer
+    height: 20px
+    margin: 20px
+    max-width: 20px
+    position: relative
+    width: 20px
     &.active
-      background: url("../img/built/bullets.png") bottom
-
+      .active-indicator
+        background: $color-orange
+        border-radius: 50%
+        height: 10px
+        left: -15px
+        margin: 20px
+        position: absolute
+        top: -15px
+        width: 10px
