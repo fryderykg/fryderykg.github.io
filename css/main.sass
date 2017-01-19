@@ -11,6 +11,56 @@
   font-family: mensch-thin
   src: url("../font/mensch-thin-wf.woff")
 
+$color-beige: #ECE9D6
+$color-orange: #E37655
+$color-light-grey: lightgray
+$color-dark-grey: #4D4D4D
+$color-blue: #a8c8ca
 
 body
-  background: #a8c8ca url("../img/built/bg.png")
+  background: $color-blue url("../img/built/bg.png")
+
+.slide1
+  height: 500px
+  background: url("http://placehold.it/1200x500") center /cover
+
+.slide2
+  height: 500px
+  background: url("http://placehold.it/1200x500") center /cover
+
+.slide3
+  height: 500px
+  background: url("http://placehold.it/1200x500") center /cover
+
+.carousel-icon-preview
+  background: url("../img/built/arrows.png")
+  height: 42px
+  width: 42px
+
+.carousel-icon-next
+  background: url("../img/built/arrows.png") bottom
+  height: 42px
+  width: 42px
+
+.carousel-indicators
+  li
+    //width: 20px
+    //max-width: 20px
+    //height: 20px
+    //margin: 20px
+    //cursor: pointer
+    //border-radius: 50%
+    //background: $color-light-grey
+    //&.active
+    //  background: $color-orange
+    //  background-size: 15px 15px
+    width: 27px
+    max-width: 27px
+    height: 27px
+    margin: 20px
+    cursor: pointer
+    border-radius: 50%
+    background: url("../img/built/bullets.png")
+    &.active
+      background: url("../img/built/bullets.png") bottom
+

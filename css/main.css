@@ -1,20 +1,49 @@
 @font-face {
   font-family: mensch;
   src: url("../font/mensch-wf.woff") format("woff"); }
-
 @font-face {
   font-family: mensch-bold;
   src: url("../font/mensch-bold-wf.woff"); }
-
 @font-face {
   font-family: mensch-inline;
   src: url("../font/mensch-inline-wf.woff"); }
-
 @font-face {
   font-family: mensch-thin;
   src: url("../font/mensch-thin-wf.woff"); }
-
 body {
   background: #a8c8ca url("../img/built/bg.png"); }
+
+.slide1 {
+  height: 500px;
+  background: url("http://placehold.it/1200x500") center/cover; }
+
+.slide2 {
+  height: 500px;
+  background: url("http://placehold.it/1200x500") center/cover; }
+
+.slide3 {
+  height: 500px;
+  background: url("http://placehold.it/1200x500") center/cover; }
+
+.carousel-icon-preview {
+  background: url("../img/built/arrows.png");
+  height: 42px;
+  width: 42px; }
+
+.carousel-icon-next {
+  background: url("../img/built/arrows.png") bottom;
+  height: 42px;
+  width: 42px; }
+
+.carousel-indicators li {
+  width: 27px;
+  max-width: 27px;
+  height: 27px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: url("../img/built/bullets.png"); }
+  .carousel-indicators li.active {
+    background: url("../img/built/bullets.png") bottom; }
 
 /*# sourceMappingURL=main.css.map */
