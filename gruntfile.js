@@ -61,9 +61,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ["sass", "concat"]);
+    grunt.registerTask('default', ["sass"]);
     grunt.registerTask('img_min', ["imagemin"]);
     grunt.registerTask('concat', ["concat"]);
 };
