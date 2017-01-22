@@ -1,101 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&subset=latin-ext')
+
+@font-face
+  font-family: 'Bazar'
+  src: url('../font/bazar/Bazar.woff') format('woff'), url('../font/bazar/Bazar.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
 @font-face
   font-family: mensch
   src: url("../font/mensch-wf.woff") format("woff")
+
 @font-face
   font-family: mensch-bold
   src: url("../font/mensch-bold-wf.woff")
+
 @font-face
   font-family: mensch-inline
   src: url("../font/mensch-inline-wf.woff")
+
 @font-face
   font-family: mensch-thin
   src: url("../font/mensch-thin-wf.woff")
 
-$color-beige: #ECE9D6
-$color-orange: #E37655
-$color-light-grey: lightgray
-$color-dark-grey: #4D4D4D
-$color-blue: #a8c8ca
-$color-red: #DF674A
 
-.container
-  padding: 0
+@mixin shadow-box()
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3)
+
+@mixin shadow-text()
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .3)
+
+$color-yellow: #fff0ce
+
+$color-blue: #7ac0c0
+$color-orange: #e68966
+$color-red: #D35244
+$color-beige: rgb(246, 237, 216)
+$color-gray-dark: #4c5057
+$color-gray-light: #e3e0dd
+
+$font-primary: arial, sans-serif
+$font-decoration: Bazar, sans-serif
 
 body
-  background: $color-blue url("../img/built/bg.png")
+  margin: 100px 0
 
 header
-  background: $color-beige url("../img/built/noise.png")
+  background: $color-blue
+  width: 100%
+  min-height: 100px
+  align-items: center
+  justify-content: space-around
+  position: fixed
+  top: 0
+  @include shadow-box
+  outline: 1px dashed rgba(246, 237, 216, 0.7)
+  outline-offset: -10px
 
-  .logo
-    height: 200px
-  .navbar
-    background: url("../img/built/nav-top.png") repeat-x top left
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5)
-    margin-bottom: 40px
-    ul
-      justify-content: space-around
-      width: 100%
-      li
-        margin: 10px 0 5px
-        text-align: center
-        transition: .5s all
-        transform: skewX(-25deg)
-        width: 22%
+nav
+
+  flex: 1
+  img
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-50%, -12%)
+    height: 120px
+  ul
+    display: flex
+    list-style-type: none
+    text-align: center
+    margin: 0
+    padding: 0
+    justify-content: space-around
+    li
+      position: relative
+      padding: 20px 0
+      &.icon
+        display: none
+      a
+        text-decoration: none
+        font-family: $font-decoration
+        font-size: 1.5em
+        text-transform: uppercase
+        color: $color-beige
+        @include shadow-text
         &:hover
-          background: $color-orange
-          span
-            color: white
-            text-shadow: 2px 2px 1px $color-dark-grey
-        a
-          color: $color-dark-grey
-          font-family: mensch, sans-serif
-          font-size: 1.4em
-          padding: 3px
-        span
-          display: block
-          transform: skewX(25deg)
-          transition: .3s all
+          color: $color-orange
 
-.slide1
-  background: url("../img/built/advertise_it_screen.jpg") top / cover
-  height: 400px
+@media (max-width: 768px)
+  ul.topnav
+    flex-direction: column
+    li
+      display: none
+      &.icon
+        display: flex
 
-.slide2
-  background: url("../img/built/photo_gallery_screen.jpg") top / cover
-  height: 400px
+  ul.responsive
+    li
+      display: flex
+//&:not(:first-child)
+    //justify-content: center
 
-.slide3
-  background: url("../img/built/photographer_page_screen.jpg") center / cover
-  height: 400px
 
-.carousel-icon-preview
-  background: url("../img/built/arrows.png")
-  height: 42px
-  width: 42px
 
-.carousel-icon-next
-  background: url("../img/built/arrows.png") bottom
-  height: 42px
-  width: 42px
+section
+  height: 600px
+  background: $color-blue
+  @include shadow-box
+  outline: 1px dashed $color-beige
+  outline-offset: -10px
 
-.carousel-indicators
-  li
-    background: $color-light-grey
-    border-radius: 50%
-    cursor: pointer
-    height: 20px
-    margin: 20px
-    max-width: 20px
-    position: relative
-    width: 20px
-    &.active
-      .active-indicator
-        background: $color-orange
-        border-radius: 50%
-        height: 10px
-        left: -15px
-        margin: 20px
-        position: absolute
-        top: -15px
-        width: 10px
+//.portfolio
+//  //background: transparent
+//  height: 600px
+//  //padding-top: 150px
+//
+//.technologies
+//  //background: $color-beige
+//
+//.contact
+//  //background: $color-gray-dark
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+.row
+  display: flex
+  flex-wrap: wrap
+
+.col
+  border-color: #f1c40f
+  padding: 15px
+
+.col-1
+  flex: 8.333%
+.col-2
+  flex: 16.667%
+.col-3
+  flex: 25%
+.col-4
+  flex: 33.333%
+.col-5
+  flex: 41.667%
+.col-6
+  flex: 50%
+.col-7
+  flex: 58.333%
+.col-8
+  flex: 66.667%
+.col-9
+  flex: 75%
+.col-10
+  flex: 83.333%
+.col-11
+  flex: 91.667%
+.col-12
+  flex: 100%

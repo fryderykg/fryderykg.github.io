@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&subset=latin-ext");
+@font-face {
+  font-family: "Bazar";
+  src: url("../font/bazar/Bazar.woff") format("woff"), url("../font/bazar/Bazar.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
   font-family: mensch;
   src: url("../font/mensch-wf.woff") format("woff"); }
@@ -10,83 +16,115 @@
 @font-face {
   font-family: mensch-thin;
   src: url("../font/mensch-thin-wf.woff"); }
-.container {
-  padding: 0; }
 
 body {
-  background: #a8c8ca url("../img/built/bg.png"); }
+  margin: 100px 0; }
 
 header {
-  background: #ECE9D6 url("../img/built/noise.png"); }
-  header .logo {
-    height: 200px; }
-  header .navbar {
-    background: url("../img/built/nav-top.png") repeat-x top left;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    margin-bottom: 40px; }
-    header .navbar ul {
-      justify-content: space-around;
-      width: 100%; }
-      header .navbar ul li {
-        margin: 10px 0 5px;
-        text-align: center;
-        transition: 0.5s all;
-        transform: skewX(-25deg);
-        width: 22%; }
-        header .navbar ul li:hover {
-          background: #E37655; }
-          header .navbar ul li:hover span {
-            color: white;
-            text-shadow: 2px 2px 1px #4D4D4D; }
-        header .navbar ul li a {
-          color: #4D4D4D;
-          font-family: mensch, sans-serif;
-          font-size: 1.4em;
-          padding: 3px; }
-        header .navbar ul li span {
-          display: block;
-          transform: skewX(25deg);
-          transition: 0.3s all; }
+  background: #7ac0c0;
+  width: 100%;
+  min-height: 100px;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  outline: 1px dashed rgba(246, 237, 216, 0.7);
+  outline-offset: -10px; }
 
-.slide1 {
-  background: url("../img/built/advertise_it_screen.jpg") top/cover;
-  height: 400px; }
-
-.slide2 {
-  background: url("../img/built/photo_gallery_screen.jpg") top/cover;
-  height: 400px; }
-
-.slide3 {
-  background: url("../img/built/photographer_page_screen.jpg") center/cover;
-  height: 400px; }
-
-.carousel-icon-preview {
-  background: url("../img/built/arrows.png");
-  height: 42px;
-  width: 42px; }
-
-.carousel-icon-next {
-  background: url("../img/built/arrows.png") bottom;
-  height: 42px;
-  width: 42px; }
-
-.carousel-indicators li {
-  background: lightgray;
-  border-radius: 50%;
-  cursor: pointer;
-  height: 20px;
-  margin: 20px;
-  max-width: 20px;
-  position: relative;
-  width: 20px; }
-  .carousel-indicators li.active .active-indicator {
-    background: #E37655;
-    border-radius: 50%;
-    height: 10px;
-    left: -15px;
-    margin: 20px;
+nav {
+  flex: 1; }
+  nav img {
     position: absolute;
-    top: -15px;
-    width: 10px; }
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -12%);
+    height: 120px; }
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around; }
+    nav ul li {
+      position: relative;
+      padding: 20px 0; }
+      nav ul li.icon {
+        display: none; }
+      nav ul li a {
+        text-decoration: none;
+        font-family: Bazar, sans-serif;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        color: #f6edd8;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+        nav ul li a:hover {
+          color: #e68966; }
+
+@media (max-width: 768px) {
+  ul.topnav {
+    flex-direction: column; }
+    ul.topnav li {
+      display: none; }
+      ul.topnav li.icon {
+        display: flex; }
+
+  ul.responsive li {
+    display: flex; } }
+section {
+  height: 600px;
+  background: #7ac0c0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  outline: 1px dashed #f6edd8;
+  outline-offset: -10px; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; }
+
+.col {
+  border-color: #f1c40f;
+  padding: 15px; }
+
+.col-1 {
+  flex: 8.333%; }
+
+.col-2 {
+  flex: 16.667%; }
+
+.col-3 {
+  flex: 25%; }
+
+.col-4 {
+  flex: 33.333%; }
+
+.col-5 {
+  flex: 41.667%; }
+
+.col-6 {
+  flex: 50%; }
+
+.col-7 {
+  flex: 58.333%; }
+
+.col-8 {
+  flex: 66.667%; }
+
+.col-9 {
+  flex: 75%; }
+
+.col-10 {
+  flex: 83.333%; }
+
+.col-11 {
+  flex: 91.667%; }
+
+.col-12 {
+  flex: 100%; }
 
 /*# sourceMappingURL=main.css.map */
