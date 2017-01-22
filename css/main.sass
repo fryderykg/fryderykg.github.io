@@ -1,79 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&subset=latin-ext')
+
+@font-face
+  font-family: 'Bazar'
+  src: url('../font/bazar/Bazar.woff') format('woff'), url('../font/bazar/Bazar.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
 @font-face
   font-family: mensch
   src: url("../font/mensch-wf.woff") format("woff")
+
 @font-face
   font-family: mensch-bold
   src: url("../font/mensch-bold-wf.woff")
+
 @font-face
   font-family: mensch-inline
   src: url("../font/mensch-inline-wf.woff")
+
 @font-face
   font-family: mensch-thin
   src: url("../font/mensch-thin-wf.woff")
 
+@mixin shadow-box()
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3)
 
-$color-yellow: #fff1ce
+@mixin shadow-text()
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .3)
+
+$color-yellow: #fff0ce
+
 $color-blue: #7ac0c0
 $color-orange: #e68966
-$color-red: #d45244
-$color-beige: #e6e1d0
+$color-red: #D35244
+$color-beige: rgb(246, 237, 216)
 $color-gray-dark: #4c5057
 $color-gray-light: #e3e0dd
 
-
+$font-primary: arial, sans-serif
+$font-decoration: Bazar, sans-serif
 
 body
-  background: #a8c8ca url("../img/built/bg.png")
+  margin: 100px 0
 
 header
   background: $color-blue
-  //height: 600px
-
-.navbar-brand
-  position: absolute
-  left: 50%
-  top: -50px
-  transform: translateX(-50%) scale(.4)
-
-.navbar
-  margin-top: 50px
-  background: inherit
-
-li
-  &:nth-of-type(1)
-    width: 20%
-  &:nth-of-type(2)
-    width: 30%
-    text-align: left
-  &:nth-of-type(3)
-    width: 30%
-    text-align: right
-  &:nth-of-type(4)
-    width: 20%
-
-
-  text-align: center
-
-  a
-    color: $color-beige !important
-    font-family: mensch-bold, arial, sans-serif
-    font-size: calc(1em + 1vw)
-
-
-
-.navbar-nav
   width: 100%
+  min-height: 100px
+  align-items: center
+  justify-content: space-around
+  position: fixed
+  top: 0
+  @include shadow-box
+  outline: 1px dashed rgba(246, 237, 216, 0.7)
+  outline-offset: -10px
+
+nav
+
+  flex: 1
+  img
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-50%, -12%)
+    height: 120px
+  ul
+    display: flex
+    list-style-type: none
+    text-align: center
+    margin: 0
+    padding: 0
+    justify-content: space-around
+    li
+      position: relative
+      padding: 20px 0
+      &.icon
+        display: none
+      a
+        text-decoration: none
+        font-family: $font-decoration
+        font-size: 1.5em
+        text-transform: uppercase
+        color: $color-beige
+        @include shadow-text
+        &:hover
+          color: $color-orange
+
+@media (max-width: 768px)
+  ul.topnav
+    flex-direction: column
+    li
+      display: none
+      &.icon
+        display: flex
+
+  ul.responsive
+    li
+      display: flex
+//&:not(:first-child)
+    //justify-content: center
+
 
 
 section
   height: 600px
+  background: $color-blue
+  @include shadow-box
+  outline: 1px dashed $color-beige
+  outline-offset: -10px
 
-.portfolio
-  background: $color-orange
+//.portfolio
+//  //background: transparent
+//  height: 600px
+//  //padding-top: 150px
+//
+//.technologies
+//  //background: $color-beige
+//
+//.contact
+//  //background: $color-gray-dark
 
-.technologies
-  background: $color-beige
+.container
+  max-width: 1200px
+  margin: 0 auto
+.row
+  display: flex
+  flex-wrap: wrap
 
-.contact
-  background: $color-gray-dark
+.col
+  border-color: #f1c40f
+  padding: 15px
 
+.col-1
+  flex: 8.333%
+.col-2
+  flex: 16.667%
+.col-3
+  flex: 25%
+.col-4
+  flex: 33.333%
+.col-5
+  flex: 41.667%
+.col-6
+  flex: 50%
+.col-7
+  flex: 58.333%
+.col-8
+  flex: 66.667%
+.col-9
+  flex: 75%
+.col-10
+  flex: 83.333%
+.col-11
+  flex: 91.667%
+.col-12
+  flex: 100%
