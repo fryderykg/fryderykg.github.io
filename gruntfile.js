@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'css/main.css': 'css/main.sass'
+                    'css/build.css': 'sass/main.sass'
                 }
             }
         },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['css/*.sass'],
+                files: ['sass/main.sass'],
                 tasks: ['sass'],
                 options: {
                     spawn: false
@@ -40,8 +40,8 @@ module.exports = function(grunt) {
                 separator: '\n'
             },
             dist: {
-                src: ['js/src/main.js'],
-                dest: 'js/dist/main.js'
+                src: ['sass/variable.sass', 'sass/typography.sass', 'sass/layouts.sass'],
+                dest: 'sass/build.sass'
             }
         },
         uglify: {
@@ -66,5 +66,6 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ["sass"]);
     grunt.registerTask('img_min', ["imagemin"]);
-    grunt.registerTask('concat', ["concat"]);
+    // grunt.registerTask('concat', ["concat"]);
+    grunt.registerTask('sass-concat', ["concat", "sass"]);
 };

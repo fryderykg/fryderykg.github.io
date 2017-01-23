@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&subset=latin-ext");
+@font-face {
+  font-family: 'Bazar';
+  src: url("../font/bazar/Bazar.woff") format("woff"), url("../font/bazar/Bazar.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: mensch;
+  src: url("../font/mensch/mensch-wf.woff") format("woff"); }
+
+@font-face {
+  font-family: mensch-bold;
+  src: url("../font/mensch/mensch-bold-wf.woff"); }
+
+@font-face {
+  font-family: mensch-inline;
+  src: url("../font/mensch/mensch-inline-wf.woff"); }
+
+@font-face {
+  font-family: mensch-thin;
+  src: url("../font/mensch/mensch-thin-wf.woff"); }
+
+body {
+  margin: 100px 0; }
+
+header {
+  background: #7ac0c0;
+  width: 100%;
+  min-height: 100px;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  outline: 1px dashed rgba(246, 237, 216, 0.7);
+  outline-offset: -10px; }
+
+nav {
+  flex: 1; }
+  nav img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -12%);
+    height: 120px; }
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around; }
+    nav ul li {
+      position: relative;
+      padding: 20px 0; }
+      nav ul li.icon {
+        display: none; }
+      nav ul li a {
+        text-decoration: none;
+        font-family: Bazar, sans-serif;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        color: #f6edd8;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+        nav ul li a:hover {
+          color: #e68966; }
+
+@media (max-width: 768px) {
+  ul.topnav {
+    flex-direction: column; }
+    ul.topnav li {
+      display: none; }
+      ul.topnav li.icon {
+        display: flex; }
+  ul.responsive li {
+    display: flex; } }
+
+section {
+  height: 600px;
+  background: #7ac0c0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  outline: 1px dashed #f6edd8;
+  outline-offset: -10px; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; }
+
+.col {
+  border-color: #f1c40f;
+  padding: 15px; }
+
+.col-1 {
+  flex: 8.333%; }
+
+.col-2 {
+  flex: 16.667%; }
+
+.col-3 {
+  flex: 25%; }
+
+.col-4 {
+  flex: 33.333%; }
+
+.col-5 {
+  flex: 41.667%; }
+
+.col-6 {
+  flex: 50%; }
+
+.col-7 {
+  flex: 58.333%; }
+
+.col-8 {
+  flex: 66.667%; }
+
+.col-9 {
+  flex: 75%; }
+
+.col-10 {
+  flex: 83.333%; }
+
+.col-11 {
+  flex: 91.667%; }
+
+.col-12 {
+  flex: 100%; }
+
+/*# sourceMappingURL=build.css.map */

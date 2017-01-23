@@ -1,0 +1,119 @@
+@import "variables"
+@import "typography"
+
+
+body
+  margin: 100px 0
+
+header
+  background: $color-blue
+  width: 100%
+  min-height: 100px
+  align-items: center
+  justify-content: space-around
+  position: fixed
+  top: 0
+  @include shadow-box
+  outline: 1px dashed rgba(246, 237, 216, 0.7)
+  outline-offset: -10px
+
+nav
+
+  flex: 1
+  img
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-50%, -12%)
+    height: 120px
+  ul
+    display: flex
+    list-style-type: none
+    text-align: center
+    margin: 0
+    padding: 0
+    justify-content: space-around
+    li
+      position: relative
+      padding: 20px 0
+      &.icon
+        display: none
+      a
+        text-decoration: none
+        font-family: $font-decoration
+        font-size: 1.5em
+        text-transform: uppercase
+        color: $color-beige
+        @include shadow-text
+        &:hover
+          color: $color-orange
+
+@media (max-width: 768px)
+  ul.topnav
+    flex-direction: column
+    li
+      display: none
+      &.icon
+        display: flex
+
+  ul.responsive
+    li
+      display: flex
+//&:not(:first-child)
+    //justify-content: center
+
+
+
+section
+  height: 600px
+  background: $color-blue
+  @include shadow-box
+  outline: 1px dashed $color-beige
+  outline-offset: -10px
+
+//.portfolio
+//  //background: transparent
+//  height: 600px
+//  //padding-top: 150px
+//
+//.technologies
+//  //background: $color-beige
+//
+//.contact
+//  //background: $color-gray-dark
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+.row
+  display: flex
+  flex-wrap: wrap
+
+.col
+  border-color: #f1c40f
+  padding: 15px
+
+.col-1
+  flex: 8.333%
+.col-2
+  flex: 16.667%
+.col-3
+  flex: 25%
+.col-4
+  flex: 33.333%
+.col-5
+  flex: 41.667%
+.col-6
+  flex: 50%
+.col-7
+  flex: 58.333%
+.col-8
+  flex: 66.667%
+.col-9
+  flex: 75%
+.col-10
+  flex: 83.333%
+.col-11
+  flex: 91.667%
+.col-12
+  flex: 100%
