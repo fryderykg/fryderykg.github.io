@@ -4,9 +4,10 @@
 
 body
   margin: 100px 0
+  color: $color-almost-black
 
 header
-  background: $color-blue
+  background: $color-blue url("../img/built/grain.png")
   width: 100%
   min-height: 100px
   align-items: center
@@ -17,9 +18,7 @@ header
   outline: 1px dashed rgba(246, 237, 216, 0.7)
   outline-offset: -10px
 
-header
-  background-image: url("../img/built/grain.png")
-
+//  NAVIGATION
 nav
   flex: 1
   img
@@ -61,35 +60,62 @@ nav
   ul.responsive
     li
       display: flex
-//&:not(:first-child)
-    //justify-content: center
-
-
 
 section
-  min-height: 600px
   height: calc(100vh - 100px)
-  @include shadow-box
+  min-height: 600px
   outline: 1px dashed $color-beige
   outline-offset: -10px
+  text-align: center
+
+//  SEPARATOR WITH --XXX--
+.separator span
+  color: $color-almost-black
+  display: inline-block
+  font-family: $font-primary
+  font-size: 22px
+  line-height: 22px
+  margin: 10px auto 5px
+  position: relative
+  &.light-color // change color to beige on dark background
+    color: $color-beige
+    &:before, &:after
+      border-bottom: 2px solid $color-beige
+  &:before, &:after
+    border-bottom: 2px solid $color-almost-black
+    content: ""
+    height: 6px
+    position: absolute
+    top: 5px
+    width: 40px
+  &:before
+    margin-right: 10px
+    right: 100%
+  &:after
+    left: 100%
+    margin-left: 10px
 
 .about-me
   background: $color-blue url("../img/built/grain.png")
 
 .portfolio
   background: $color-orange url("../img/built/grain.png")
-  //padding-top: 150px
 
 .technologies
   background: $color-beige url("../img/built/grain.png")
+  outline: 1px dashed $color-gray-dark
 
 .contact
   background: $color-gray-dark
+  h1
+    color: $color-beige
+    text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige
 
-
+// GRID
 .container
   max-width: 1200px
   margin: 0 auto
+
 .row
   display: flex
   flex-wrap: wrap
