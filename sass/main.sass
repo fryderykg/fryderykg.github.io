@@ -1,19 +1,22 @@
 @import "variables"
 @import "typography"
 
+*
+  box-sizing: border-box
 
 body
-  margin: 100px 0
   color: $color-almost-black
+  margin: 100px 0 0 0
 
 header
-  background: $color-blue url("../img/built/grain.png")
-  width: 100%
-  min-height: 100px
   align-items: center
+  background: $color-blue url("../img/built/grain.png")
   justify-content: space-around
+  min-height: 100px
   position: fixed
   top: 0
+  width: 100%
+  z-index: 100
   @include shadow-box
   outline: 1px dashed rgba(246, 237, 216, 0.7)
   outline-offset: -10px
@@ -22,30 +25,30 @@ header
 nav
   flex: 1
   img
+    height: 120px
+    left: 50%
     position: absolute
     top: 0
-    left: 50%
     transform: translate(-50%, -12%)
-    height: 120px
   ul
     display: flex
+    justify-content: space-around
     list-style-type: none
-    text-align: center
     margin: 0
     padding: 0
-    justify-content: space-around
+    text-align: center
     li
       position: relative
       padding: 20px 0
       &.icon
         display: none
       a
-        text-decoration: none
+        color: $color-beige
         font-family: $font-decoration
         font-size: 1.5em
-        text-transform: uppercase
-        color: $color-beige
+        text-decoration: none
         text-shadow: 2px 2px 5px $color-black-opacity
+        text-transform: uppercase
         &:hover
           color: $color-orange
 
@@ -60,13 +63,6 @@ nav
   ul.responsive
     li
       display: flex
-
-section
-  height: calc(100vh - 100px)
-  min-height: 600px
-  outline: 1px dashed $color-beige
-  outline-offset: -10px
-  text-align: center
 
 //  SEPARATOR WITH --XXX--
 .separator span
@@ -95,16 +91,60 @@ section
     left: 100%
     margin-left: 10px
 
+// ALL SECTIONS
+section
+  min-height: calc(100vh - 100px)
+  outline: 1px dashed $color-beige
+  outline-offset: -10px
+  text-align: center
+
+//  ABOUT ME SECTION
 .about-me
   background: $color-blue url("../img/built/grain.png")
 
+//  PORTFOLIO SECTION
 .portfolio
   background: $color-orange url("../img/built/grain.png")
 
+.portfolio-item
+  background: white
+  border-radius: 5px
+  margin: 20px
+  div
+    border: 1px solid transparent
+    position: relative
+  img
+    padding: 5px
+    width: 100%
+  i
+    background: white
+    border-radius: 50%
+    color: $color-almost-black
+    cursor: pointer
+    font-size: 2em
+    height: 50px
+    left: 50%
+    line-height: 1.7em
+    position: absolute
+    top: -50%
+    transform: translate(20%)
+    transition: .5s all
+    width: 50px
+    &:hover
+      transform: translate(20%, -20%)
+    &.fa-github
+      transform: translate(-120%)
+      &:hover
+        transform: translate(-120%, -20%)
+  p
+    padding-top: 20px
+
+// TECHNOLOGIES SECTION
 .technologies
   background: $color-beige url("../img/built/grain.png")
   outline: 1px dashed $color-gray-dark
 
+//  CONTACT SECTION
 .contact
   background: $color-gray-dark
   h1
@@ -113,8 +153,8 @@ section
 
 // GRID
 .container
-  max-width: 1200px
   margin: 0 auto
+  max-width: 1200px
 
 .row
   display: flex
@@ -124,27 +164,82 @@ section
   border-color: #f1c40f
   padding: 15px
 
-.col-1
+// For desktop
+.col-md-1
   flex: 8.333%
-.col-2
+.col-md-2
   flex: 16.667%
-.col-3
+.col-md-3
   flex: 25%
-.col-4
+.col-md-4
   flex: 33.333%
-.col-5
+.col-md-5
   flex: 41.667%
-.col-6
+.col-md-6
   flex: 50%
-.col-7
+.col-md-7
   flex: 58.333%
-.col-8
+.col-md-8
   flex: 66.667%
-.col-9
+.col-md-9
   flex: 75%
-.col-10
+.col-md-10
   flex: 83.333%
-.col-11
+.col-md-11
   flex: 91.667%
-.col-12
+.col-md-12
   flex: 100%
+
+//  FOR TABLETS
+@media (max-width: 768px)
+  .col-sm-1
+    flex: 8.333%
+  .col-sm-2
+    flex: 16.667%
+  .col-sm-3
+    flex: 25%
+  .col-sm-4
+    flex: 33.333%
+  .col-sm-5
+    flex: 41.667%
+  .col-sm-6
+    flex: 50%
+  .col-sm-7
+    flex: 58.333%
+  .col-sm-8
+    flex: 66.667%
+  .col-sm-9
+    flex: 75%
+  .col-sm-10
+    flex: 83.333%
+  .col-sm-11
+    flex: 91.667%
+  .col-sm-12
+    flex: 100%
+
+// FOR MOBILE
+@media (max-width: 576px)
+  .col-xs-1
+    flex: 8.333%
+  .col-xs-2
+    flex: 16.667%
+  .col-xs-3
+    flex: 25%
+  .col-xs-4
+    flex: 33.333%
+  .col-xs-5
+    flex: 41.667%
+  .col-xs-6
+    flex: 50%
+  .col-xs-7
+    flex: 58.333%
+  .col-xs-8
+    flex: 66.667%
+  .col-xs-9
+    flex: 75%
+  .col-xs-10
+    flex: 83.333%
+  .col-xs-11
+    flex: 91.667%
+  .col-xs-12
+    flex: 100%
