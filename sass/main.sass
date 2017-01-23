@@ -17,8 +17,10 @@ header
   outline: 1px dashed rgba(246, 237, 216, 0.7)
   outline-offset: -10px
 
-nav
+header
+  background-image: url("../img/built/grain.png")
 
+nav
   flex: 1
   img
     position: absolute
@@ -44,7 +46,7 @@ nav
         font-size: 1.5em
         text-transform: uppercase
         color: $color-beige
-        @include shadow-text
+        text-shadow: 2px 2px 5px $color-black-opacity
         &:hover
           color: $color-orange
 
@@ -65,22 +67,25 @@ nav
 
 
 section
-  height: 600px
-  background: $color-blue
+  min-height: 600px
+  height: calc(100vh - 100px)
   @include shadow-box
   outline: 1px dashed $color-beige
   outline-offset: -10px
 
-//.portfolio
-//  //background: transparent
-//  height: 600px
-//  //padding-top: 150px
-//
-//.technologies
-//  //background: $color-beige
-//
-//.contact
-//  //background: $color-gray-dark
+.about-me
+  background: $color-blue url("../img/built/grain.png")
+
+.portfolio
+  background: $color-orange url("../img/built/grain.png")
+  //padding-top: 150px
+
+.technologies
+  background: $color-beige url("../img/built/grain.png")
+
+.contact
+  background: $color-gray-dark
+
 
 .container
   max-width: 1200px
