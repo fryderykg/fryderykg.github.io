@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['sass/main.sass'],
+                files: ['sass/main.sass', 'sass/typography.sass', 'sass/variables.sass'],
                 tasks: ['sass'],
                 options: {
                     spawn: false
@@ -66,6 +66,5 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ["sass"]);
     grunt.registerTask('img_min', ["imagemin"]);
-    // grunt.registerTask('concat', ["concat"]);
     grunt.registerTask('sass-concat', ["concat", "sass"]);
 };
