@@ -1,0 +1,295 @@
+@import "variables"
+@import "typography"
+
+*
+  box-sizing: border-box
+
+body
+  color: $color-almost-black
+  margin: 100px 0 0 0
+
+header
+  align-items: center
+  background: $color-blue url("../img/built/grain.png")
+  justify-content: space-around
+  min-height: 100px
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 100
+  @include shadow-box
+  outline: 1px dashed rgba(246, 237, 216, 0.7)
+  outline-offset: -10px
+
+//  NAVIGATION
+nav
+  flex: 1
+  img
+    height: 120px
+    left: 50%
+    position: absolute
+    top: 0
+    transform: translate(-50%, -12%)
+  ul
+    display: flex
+    justify-content: space-around
+    list-style-type: none
+    margin: 0
+    padding: 0
+    text-align: center
+    li
+      position: relative
+      padding: 20px 0
+      &.icon
+        display: none
+      a
+        color: $color-beige
+        font-family: $font-decoration
+        font-size: 1.5em
+        text-decoration: none
+        text-shadow: 2px 2px 5px $color-black-opacity
+        text-transform: uppercase
+        &:hover
+          color: $color-orange
+
+@media (max-width: 768px)
+  ul.topnav
+    flex-direction: column
+    li
+      display: none
+      &.icon
+        display: flex
+
+  ul.responsive
+    li
+      display: flex
+
+//  SEPARATOR WITH --XXX--
+.separator span
+  display: inline-block
+  font-family: $font-primary
+  font-size: 22px
+  line-height: 22px
+  margin: 10px auto 5px
+  position: relative
+  &:before, &:after
+    border-bottom: 2px solid
+    content: ""
+    height: 6px
+    position: absolute
+    top: 4px
+    width: 40px
+  &:before
+    margin-right: 10px
+    right: 100%
+  &:after
+    left: 100%
+    margin-left: 10px
+
+// ALL SECTIONS
+section
+  background-image: url("../img/built/grain.png")
+  min-height: calc(100vh - 100px)
+  outline-offset: -10px
+  outline: 1px dashed $color-beige
+  padding-bottom: 50px
+  text-align: center
+
+//  ABOUT ME SECTION
+.about-me
+  background-color: $color-blue
+
+// todo delete after finish site
+.under-construction
+  color: orange
+  font-family: "Black Ops One", sans-serif
+  font-size: calc(2em + 2vw)
+  opacity: .8
+
+//  PORTFOLIO SECTION
+.portfolio
+  background-color: $color-orange
+
+.portfolio-item
+  background: white
+  border-radius: 5px
+  margin: 20px
+  div
+    border: 1px solid transparent
+    position: relative
+  img
+    padding: 5px
+    width: 100%
+  i
+    background: white
+    border-radius: 50%
+    color: $color-almost-black
+    cursor: pointer
+    font-size: 2em
+    height: 50px
+    left: 50%
+    line-height: 1.6em
+    position: absolute
+    text-shadow: 2px 2px 5px $color-gray-dark
+    top: -30%
+    transform: translate(20%)
+    transition: .5s all
+    width: 50px
+    &:hover
+      transform: translate(20%, -20%)
+      box-shadow: 0 10px 5px -5px $color-gray-dark
+    &:active
+      box-shadow: 0 5px 5px -3px $color-gray-dark
+      transform: translate(20%, -10%)
+    &.fa-github
+      transform: translate(-120%)
+      &:hover
+        transform: translate(-120%, -20%)
+      &:active
+        transform: translate(-120%, -10%)
+  p
+    padding-top: 20px
+
+// TECHNOLOGIES SECTION
+.technologies
+  background-color: $color-beige
+  outline: 1px dashed $color-gray-dark
+  padding-bottom: 100px
+
+.technologies-item, .contact
+  h3
+    margin: 10px auto 50px
+  img
+    width: 100%
+
+  .icon
+    align-items: center
+    background: $color-red url("../img/built/grain.png")
+    border-radius: 20%
+    box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red
+    color: $color-beige
+    display: flex
+    font-size: 4em
+    height: 100px
+    justify-content: center
+    margin: 30px auto
+    transition: .5s all
+    width: 100px
+    &:hover
+      transform: translate(0, -15%)
+      box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red, 0 25px 15px -5px $color-gray-dark
+
+//  CONTACT SECTION
+.contact
+  background-color: $color-gray-dark
+  color: $color-beige
+  .row
+    justify-content: center
+  .icon
+    color: $color-beige
+    margin: 50px
+    transition: 1.5s all
+    &:hover
+      transform: rotate(360deg)
+  a, a:visited, a:active
+    color: $color-beige
+  h1
+    color: $color-beige
+    text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige
+
+// GRID
+.container
+  margin: 0 auto
+  max-width: 1200px
+
+.row
+  display: flex
+  flex-wrap: wrap
+
+.col
+  border-color: #f1c40f
+  padding: 15px
+
+// For desktop
+.col-md-1
+  flex: 8.333%
+.col-md-2
+  flex: 16.667%
+.col-md-3
+  flex: 25%
+.col-md-4
+  flex: 33.333%
+.col-md-5
+  flex: 41.667%
+.col-md-6
+  flex: 50%
+.col-md-7
+  flex: 58.333%
+.col-md-8
+  flex: 66.667%
+.col-md-9
+  flex: 75%
+.col-md-10
+  flex: 83.333%
+.col-md-11
+  flex: 91.667%
+.col-md-12
+  flex: 100%
+
+//  FOR TABLETS
+@media (max-width: 768px)
+  .col-sm-0
+    flex: 0
+  .col-sm-1
+    flex: 8.333%
+  .col-sm-2
+    flex: 16.667%
+  .col-sm-3
+    flex: 25%
+  .col-sm-4
+    flex: 33.333%
+  .col-sm-5
+    flex: 41.667%
+  .col-sm-6
+    flex: 50%
+  .col-sm-7
+    flex: 58.333%
+  .col-sm-8
+    flex: 66.667%
+  .col-sm-9
+    flex: 75%
+  .col-sm-10
+    flex: 83.333%
+  .col-sm-11
+    flex: 91.667%
+  .col-sm-12
+    flex: 100%
+
+// FOR MOBILE
+@media (max-width: 576px)
+  .col-xs-0
+    flex: 0
+  .col-xs-1
+    flex: 8.333%
+  .col-xs-2
+    flex: 16.667%
+  .col-xs-3
+    flex: 25%
+  .col-xs-4
+    flex: 33.333%
+  .col-xs-5
+    flex: 41.667%
+  .col-xs-6
+    flex: 50%
+  .col-xs-7
+    flex: 58.333%
+  .col-xs-8
+    flex: 66.667%
+  .col-xs-9
+    flex: 75%
+  .col-xs-10
+    flex: 83.333%
+  .col-xs-11
+    flex: 91.667%
+  .col-xs-12
+    flex: 100%
