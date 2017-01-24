@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:100,300,400,700&subset=latin-ext')
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
 @import url("http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")
+// only under construction
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One')
 
 @font-face
   font-family: 'Bazar'
@@ -33,6 +35,9 @@ h1, h2
   margin: 0
   letter-spacing: 0.07em
   font-weight: 300
+  &.light
+    color: $color-beige
+    text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige
 
 h2
   font-size: 5em
@@ -40,13 +45,12 @@ h2
   padding-top: 50px
 
 h3
-  font-family: Oswald, sans-serif
-  font-family: "Roboto", sans-serif
-  //font-family: "Bazar", sans-serif
+  //font-family: Oswald, sans-serif
+  font-family: Roboto, sans-serif
   text-transform: uppercase
 
 p
-  font-family: "Roboto Slab", sans-serif
+  font-family: Roboto, sans-serif
   color: $color-almost-black
   margin-bottom: 0
   padding: 10px
@@ -55,4 +59,5 @@ p
   font-family: Oswald, sans-serif
   font-size: 1em
   text-transform: uppercase
+  margin-bottom: 50px
 

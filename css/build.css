@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:100,300,400,700&subset=latin-ext");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+@import url("https://fonts.googleapis.com/css?family=Black+Ops+One");
 @font-face {
   font-family: 'Bazar';
   src: url("../font/bazar/Bazar.woff") format("woff"), url("../font/bazar/Bazar.ttf") format("truetype");
@@ -31,6 +32,9 @@ h1, h2 {
   margin: 0;
   letter-spacing: 0.07em;
   font-weight: 300; }
+  h1.light, h2.light {
+    color: #f6edd8;
+    text-shadow: 2px 2px 0 #383A3C, 4px 4px 0 #f6edd8; }
 
 h2 {
   font-size: 5em;
@@ -38,12 +42,11 @@ h2 {
   padding-top: 50px; }
 
 h3 {
-  /*font-family: Oswald, sans-serif;*/
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   text-transform: uppercase; }
 
 p {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: Roboto, sans-serif;
   color: #383A3C;
   margin-bottom: 0;
   padding: 10px; }
@@ -51,7 +54,8 @@ p {
 .section-subtitle {
   font-family: Oswald, sans-serif;
   font-size: 1em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-bottom: 50px; }
 
 * {
   box-sizing: border-box; }
@@ -114,19 +118,14 @@ nav {
     display: flex; } }
 
 .separator span {
-  color: #383A3C;
   display: inline-block;
   font-family: "Roboto Slab", sans-serif;
   font-size: 22px;
   line-height: 22px;
   margin: 10px auto 5px;
   position: relative; }
-  .separator span.light-color {
-    color: #f6edd8; }
-    .separator span.light-color:before, .separator span.light-color:after {
-      border-bottom: 2px solid #f6edd8; }
   .separator span:before, .separator span:after {
-    border-bottom: 2px solid #383A3C;
+    border-bottom: 2px solid;
     content: "";
     height: 6px;
     position: absolute;
@@ -140,14 +139,20 @@ nav {
     margin-left: 10px; }
 
 section {
+  background-image: url("../img/built/grain.png");
   min-height: calc(100vh - 100px);
-  outline: 1px dashed #f6edd8;
   outline-offset: -10px;
-  text-align: center;
-  background-image: url("../img/built/grain.png"); }
+  outline: 1px dashed #f6edd8;
+  text-align: center; }
 
 .about-me {
   background-color: #7ac0c0; }
+
+.under-construction {
+  color: orange;
+  font-family: "Black Ops One", sans-serif;
+  font-size: 60px;
+  opacity: .8; }
 
 .portfolio {
   background-color: #e68966; }
@@ -221,7 +226,8 @@ section {
     box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244, 0 25px 15px -5px #4c5057; }
 
 .contact {
-  background-color: #4c5057; }
+  background-color: #4c5057;
+  color: #f6edd8; }
   .contact h1 {
     color: #f6edd8;
     text-shadow: 2px 2px 0 #383A3C, 4px 4px 0 #f6edd8; }
@@ -233,6 +239,10 @@ section {
 .row {
   display: flex;
   flex-wrap: wrap; }
+
+.col {
+  border-color: #f1c40f;
+  padding: 15px; }
 
 .col-md-1 {
   flex: 8.333%; }
