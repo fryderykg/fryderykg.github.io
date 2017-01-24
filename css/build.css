@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:100,300,400,700&subset=latin-ext");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 @font-face {
   font-family: 'Bazar';
   src: url("../font/bazar/Bazar.woff") format("woff"), url("../font/bazar/Bazar.ttf") format("truetype");
@@ -22,7 +23,7 @@
   font-family: mensch-thin;
   src: url("../font/mensch/mensch-thin-wf.woff"); }
 
-h1, h2, h3, h4 {
+h1, h2 {
   font-family: Bazar, sans-serif;
   text-transform: uppercase;
   color: #383A3C;
@@ -36,9 +37,16 @@ h2 {
   text-align: center;
   padding-top: 50px; }
 
+h3 {
+  font-family: Oswald, sans-serif;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase; }
+
 p {
   font-family: "Roboto Slab", sans-serif;
-  color: #383A3C; }
+  color: #383A3C;
+  margin-bottom: 0;
+  padding: 10px; }
 
 .section-subtitle {
   font-family: Oswald, sans-serif;
@@ -122,7 +130,7 @@ nav {
     content: "";
     height: 6px;
     position: absolute;
-    top: 5px;
+    top: 4px;
     width: 40px; }
   .separator span:before {
     margin-right: 10px;
@@ -135,13 +143,14 @@ section {
   min-height: calc(100vh - 100px);
   outline: 1px dashed #f6edd8;
   outline-offset: -10px;
-  text-align: center; }
+  text-align: center;
+  background-image: url("../img/built/grain.png"); }
 
 .about-me {
-  background: #7ac0c0 url("../img/built/grain.png"); }
+  background-color: #7ac0c0; }
 
 .portfolio {
-  background: #e68966 url("../img/built/grain.png"); }
+  background-color: #e68966; }
 
 .portfolio-item {
   background: white;
@@ -161,27 +170,58 @@ section {
     font-size: 2em;
     height: 50px;
     left: 50%;
-    line-height: 1.7em;
+    line-height: 1.6em;
     position: absolute;
-    top: -50%;
+    text-shadow: 2px 2px 5px #4c5057;
+    top: -30%;
     transform: translate(20%);
     transition: .5s all;
     width: 50px; }
     .portfolio-item i:hover {
-      transform: translate(20%, -20%); }
+      transform: translate(20%, -20%);
+      box-shadow: 0 10px 5px -5px #4c5057; }
+    .portfolio-item i:active {
+      box-shadow: 0 5px 5px -3px #4c5057;
+      transform: translate(20%, -10%); }
     .portfolio-item i.fa-github {
       transform: translate(-120%); }
       .portfolio-item i.fa-github:hover {
         transform: translate(-120%, -20%); }
+      .portfolio-item i.fa-github:active {
+        transform: translate(-120%, -10%); }
   .portfolio-item p {
     padding-top: 20px; }
 
 .technologies {
-  background: #f6edd8 url("../img/built/grain.png");
-  outline: 1px dashed #4c5057; }
+  background-color: #f6edd8;
+  outline: 1px dashed #4c5057;
+  padding-bottom: 100px; }
+
+.technologies-item h3 {
+  margin: 10px auto 50px; }
+
+.technologies-item img {
+  width: 100%; }
+
+.technologies-item .icon {
+  align-items: center;
+  background: #D35244;
+  border-radius: 20%;
+  box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244;
+  color: #f6edd8;
+  display: flex;
+  font-size: 4em;
+  height: 100px;
+  justify-content: center;
+  margin: 30px auto;
+  transition: .5s all;
+  width: 100px; }
+  .technologies-item .icon:hover {
+    transform: translate(0, -15%);
+    box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244, 0 25px 15px -5px #4c5057; }
 
 .contact {
-  background: #4c5057; }
+  background-color: #4c5057; }
   .contact h1 {
     color: #f6edd8;
     text-shadow: 2px 2px 0 #383A3C, 4px 4px 0 #f6edd8; }

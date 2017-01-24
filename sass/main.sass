@@ -82,7 +82,7 @@ nav
     content: ""
     height: 6px
     position: absolute
-    top: 5px
+    top: 4px
     width: 40px
   &:before
     margin-right: 10px
@@ -97,14 +97,15 @@ section
   outline: 1px dashed $color-beige
   outline-offset: -10px
   text-align: center
+  background-image: url("../img/built/grain.png")
 
 //  ABOUT ME SECTION
 .about-me
-  background: $color-blue url("../img/built/grain.png")
+  background-color: $color-blue
 
 //  PORTFOLIO SECTION
 .portfolio
-  background: $color-orange url("../img/built/grain.png")
+  background-color: $color-orange
 
 .portfolio-item
   background: white
@@ -124,29 +125,60 @@ section
     font-size: 2em
     height: 50px
     left: 50%
-    line-height: 1.7em
+    line-height: 1.6em
     position: absolute
-    top: -50%
+    text-shadow: 2px 2px 5px $color-gray-dark
+    top: -30%
     transform: translate(20%)
     transition: .5s all
     width: 50px
     &:hover
       transform: translate(20%, -20%)
+      box-shadow: 0 10px 5px -5px $color-gray-dark
+    &:active
+      box-shadow: 0 5px 5px -3px $color-gray-dark
+      transform: translate(20%, -10%)
     &.fa-github
       transform: translate(-120%)
       &:hover
         transform: translate(-120%, -20%)
+      &:active
+        transform: translate(-120%, -10%)
   p
     padding-top: 20px
 
 // TECHNOLOGIES SECTION
 .technologies
-  background: $color-beige url("../img/built/grain.png")
+  background-color: $color-beige
   outline: 1px dashed $color-gray-dark
+  padding-bottom: 100px
+
+.technologies-item
+  h3
+    margin: 10px auto 50px
+  img
+    width: 100%
+
+  .icon
+    align-items: center
+    background: $color-red
+    border-radius: 20%
+    box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red
+    color: $color-beige
+    display: flex
+    font-size: 4em
+    height: 100px
+    justify-content: center
+    margin: 30px auto
+    transition: .5s all
+    width: 100px
+    &:hover
+      transform: translate(0, -15%)
+      box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red, 0 25px 15px -5px $color-gray-dark
 
 //  CONTACT SECTION
 .contact
-  background: $color-gray-dark
+  background-color: $color-gray-dark
   h1
     color: $color-beige
     text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige
