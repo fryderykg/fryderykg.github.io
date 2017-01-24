@@ -38,7 +38,7 @@ h2 {
   padding-top: 50px; }
 
 h3 {
-  font-family: Oswald, sans-serif;
+  /*font-family: Oswald, sans-serif;*/
   font-family: "Roboto", sans-serif;
   text-transform: uppercase; }
 
@@ -205,7 +205,7 @@ section {
 
 .technologies-item .icon {
   align-items: center;
-  background: #D35244;
+  background: #D35244 url("../img/built/grain.png");
   border-radius: 20%;
   box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244;
   color: #f6edd8;
@@ -233,10 +233,6 @@ section {
 .row {
   display: flex;
   flex-wrap: wrap; }
-
-.col {
-  border-color: #f1c40f;
-  padding: 15px; }
 
 .col-md-1 {
   flex: 8.333%; }
@@ -275,6 +271,8 @@ section {
   flex: 100%; }
 
 @media (max-width: 768px) {
+  .col-sm-0 {
+    flex: 0; }
   .col-sm-1 {
     flex: 8.333%; }
   .col-sm-2 {
@@ -301,6 +299,8 @@ section {
     flex: 100%; } }
 
 @media (max-width: 576px) {
+  .col-xs-0 {
+    flex: 0; }
   .col-xs-1 {
     flex: 8.333%; }
   .col-xs-2 {

@@ -161,7 +161,7 @@ section
 
   .icon
     align-items: center
-    background: $color-red
+    background: $color-red url("../img/built/grain.png")
     border-radius: 20%
     box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red
     color: $color-beige
@@ -224,6 +224,8 @@ section
 
 //  FOR TABLETS
 @media (max-width: 768px)
+  .col-sm-0
+    flex: 0
   .col-sm-1
     flex: 8.333%
   .col-sm-2
@@ -251,6 +253,8 @@ section
 
 // FOR MOBILE
 @media (max-width: 576px)
+  .col-xs-0
+    flex: 0
   .col-xs-1
     flex: 8.333%
   .col-xs-2
