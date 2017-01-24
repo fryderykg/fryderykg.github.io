@@ -103,7 +103,7 @@ section
 .under-construction
   color: orange
   font-family: "Black Ops One", sans-serif
-  font-size: 60px
+  font-size: calc(2em + 2vw)
   opacity: .8
 
 //  PORTFOLIO SECTION
@@ -156,7 +156,7 @@ section
   outline: 1px dashed $color-gray-dark
   padding-bottom: 100px
 
-.technologies-item
+.technologies-item, .contact
   h3
     margin: 10px auto 50px
   img
@@ -183,6 +183,16 @@ section
 .contact
   background-color: $color-gray-dark
   color: $color-beige
+  .row
+    justify-content: center
+  .icon
+    color: $color-beige
+    margin: 50px
+    transition: 1.5s all
+    &:hover
+      transform: rotate(360deg)
+  a, a:visited, a:active
+    color: $color-beige
   h1
     color: $color-beige
     text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige

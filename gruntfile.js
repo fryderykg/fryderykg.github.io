@@ -40,8 +40,8 @@ module.exports = function(grunt) {
                 separator: '\n'
             },
             dist: {
-                src: ['sass/variable.sass', 'sass/typography.sass', 'sass/layouts.sass'],
-                dest: 'sass/build.sass'
+                src: ['file_1', 'file_2', 'file_3'],
+                dest: 'build_file'
             }
         },
         uglify: {
