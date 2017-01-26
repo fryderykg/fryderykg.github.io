@@ -56,7 +56,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   outline: 1px dashed rgba(246, 237, 216, 0.7);
   outline-offset: -10px; }
@@ -92,14 +92,24 @@ nav {
           color: #e68966; }
 
 @media (max-width: 768px) {
+  body {
+    margin: 0; }
+  header {
+    visibility: hidden; }
+    header.responsive {
+      visibility: visible; }
   ul.topnav {
     flex-direction: column; }
-    ul.topnav li {
-      display: none; }
-      ul.topnav li.icon {
-        display: flex; }
-  ul.responsive li {
-    display: flex; } }
+    ul.topnav li.icon {
+      display: inline;
+      line-height: 1.5em;
+      position: absolute;
+      right: 20px;
+      top: 0;
+      visibility: visible;
+      z-index: 100; }
+    ul.topnav li:nth-of-type(4) {
+      display: none; } }
 
 .separator span {
   display: inline-block;

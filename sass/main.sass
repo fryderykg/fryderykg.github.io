@@ -17,7 +17,7 @@ header
   position: fixed
   top: 0
   width: 100%
-  z-index: 100
+  z-index: 10
   @include shadow-box
   outline: 1px dashed rgba(246, 237, 216, 0.7)
   outline-offset: -10px
@@ -54,16 +54,26 @@ nav
           color: $color-orange
 
 @media (max-width: 768px)
+  body
+    margin: 0
+  header
+    visibility: hidden
+    &.responsive
+      visibility: visible
+
   ul.topnav
     flex-direction: column
     li
-      display: none
       &.icon
-        display: flex
-
-  ul.responsive
-    li
-      display: flex
+        display: inline
+        line-height: 1.5em
+        position: absolute
+        right: 20px
+        top: 0
+        visibility: visible
+        z-index: 100
+      &:nth-of-type(4)
+        display: none
 
 //  SEPARATOR WITH --XXX--
 .separator span
