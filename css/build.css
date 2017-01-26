@@ -101,6 +101,7 @@ nav {
   ul.topnav {
     flex-direction: column; }
     ul.topnav li.icon {
+      font-size: 2em;
       display: inline;
       line-height: 1.5em;
       position: absolute;
@@ -276,6 +277,23 @@ section {
   .contact h1 {
     color: #f6edd8;
     text-shadow: 2px 2px 0 #383A3C, 4px 4px 0 #f6edd8; }
+
+footer {
+  align-items: center;
+  background: #4c5057 url("../img/built/grain.png");
+  color: #f6edd8;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  outline-offset: -10px;
+  outline: 1px dashed #f6edd8;
+  text-align: center; }
+  footer p {
+    margin: 0; }
+  footer a {
+    color: #f6edd8; }
+    footer a:active, footer a:visited {
+      color: #f6edd8; }
 
 .container {
   margin: 0 auto;
