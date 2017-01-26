@@ -92,14 +92,26 @@ nav {
           color: #e68966; }
 
 @media (max-width: 768px) {
+  body {
+    margin: 0; }
+  header {
+    visibility: hidden; }
+    header.responsive {
+      height: auto;
+      visibility: visible; }
   ul.topnav {
     flex-direction: column; }
-    ul.topnav li {
-      display: none; }
-      ul.topnav li.icon {
-        display: flex; }
-  ul.responsive li {
-    display: flex; } }
+    ul.topnav li.icon {
+      visibility: visible;
+      position: absolute;
+      z-index: 100;
+      right: 20px;
+      top: 0;
+      opacity: 1;
+      display: inline;
+      line-height: 1.5em; }
+    ul.topnav li:nth-of-type(4) {
+      display: none; } }
 
 .separator span {
   display: inline-block;

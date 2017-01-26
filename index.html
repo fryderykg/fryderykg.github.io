@@ -9,26 +9,26 @@
   <link rel="stylesheet" href="css/build.css">
 </head>
 <body>
-<header class="row">
+<header class="row" id="myHeader">
   <nav class="container">
     <ul class="topnav" id="myTopnav">
-      <!--<li class="icon">-->
-      <!--<a href="javascript:void(0);" style="font-size:1.5em;" onclick="toggleMenu()">☰</a>-->
-      <!--</li>-->
-      <li class=""><a href="#about_me">about me</a></li>
-      <li class=""><a href="#portfolio">portfolio</a></li>
+      <li class="icon">
+      <a style="font-size:2em;" id="toggleMenuIcon">☰</a>
+      </li>
+      <li class="menu-link"><a class="menu" href="#about_me">about me</a></li>
+      <li class="menu-link"><a class="menu" href="#portfolio">portfolio</a></li>
       <li>
         <a class="" href="#"><img src="img/src/logo.png" alt=""></a>
       </li>
-      <li class=""><a href="#technologies">technologies</a></li>
-      <li class=""><a href="#contact">contact</a></li>
+      <li class="menu-link"><a class="menu" href="#technologies">technologies</a></li>
+      <li class="menu-link"><a class="menu" href="#contact">contact</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="about-me" id="about_me">
   <div class="container">
-    <h2>welcome</h2>
+    <h2 id="welcome">welcome</h2>
     <div class="separator"><span>×××</span></div>
     <div class="section-subtitle">a couple of words about me</div>
     <p>My name is Fryderyk, I would like to become Junior Frond-End developer.</p>
@@ -282,5 +282,10 @@
 <!--<a href="https://fryderykg.github.io">Fryderyk Grodziński</a>-->
 <!--</p>-->
 <!--</footer>-->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>

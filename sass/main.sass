@@ -54,16 +54,28 @@ nav
           color: $color-orange
 
 @media (max-width: 768px)
+  body
+    margin: 0
+  header
+    visibility: hidden
+    &.responsive
+      height: auto
+      visibility: visible
+
   ul.topnav
     flex-direction: column
     li
-      display: none
       &.icon
-        display: flex
-
-  ul.responsive
-    li
-      display: flex
+        visibility: visible
+        position: absolute
+        z-index: 100
+        right: 20px
+        top: 0
+        opacity: 1
+        display: inline
+        line-height: 1.5em
+      &:nth-of-type(4)
+        display: none
 
 //  SEPARATOR WITH --XXX--
 .separator span
