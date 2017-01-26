@@ -8,22 +8,6 @@
   font-weight: normal;
   font-style: normal; }
 
-@font-face {
-  font-family: mensch;
-  src: url("../font/mensch/mensch-wf.woff") format("woff"); }
-
-@font-face {
-  font-family: mensch-bold;
-  src: url("../font/mensch/mensch-bold-wf.woff"); }
-
-@font-face {
-  font-family: mensch-inline;
-  src: url("../font/mensch/mensch-inline-wf.woff"); }
-
-@font-face {
-  font-family: mensch-thin;
-  src: url("../font/mensch/mensch-thin-wf.woff"); }
-
 h1, h2 {
   font-family: Bazar, sans-serif;
   text-transform: uppercase;
@@ -61,7 +45,8 @@ p {
 
 body {
   color: #383A3C;
-  margin: 100px 0 0 0; }
+  margin: 100px 0 0 0;
+  font-family: "Roboto", sans-serif; }
 
 header {
   align-items: center;
@@ -118,7 +103,7 @@ nav {
 
 .separator span {
   display: inline-block;
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 22px;
   line-height: 22px;
   margin: 10px auto 5px;
@@ -142,11 +127,36 @@ section {
   min-height: calc(100vh - 100px);
   outline-offset: -10px;
   outline: 1px dashed #f6edd8;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   text-align: center; }
 
 .about-me {
   background-color: #7ac0c0; }
+  .about-me .icon {
+    align-items: center;
+    background: #D35244 url("../img/built/grain.png");
+    border-radius: 20%;
+    box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244;
+    color: #f6edd8;
+    display: flex;
+    font-size: 4em;
+    height: 100px;
+    justify-content: center;
+    margin: 30px auto;
+    transition: .5s all;
+    width: 100px;
+    color: #f6edd8;
+    transition: 1.5s all; }
+    @media (max-width: 576px) {
+      .about-me .icon {
+        height: 50px;
+        width: 50px;
+        font-size: 2.5em;
+        margin: 20px auto; } }
+    .about-me .icon:hover {
+      transform: rotate(360deg); }
+    .about-me .icon a, .about-me .icon a:visited, .about-me .icon a:active {
+      color: #f6edd8; }
 
 .under-construction {
   color: orange;
@@ -202,13 +212,13 @@ section {
   outline: 1px dashed #4c5057;
   padding-bottom: 50px; }
 
-.technologies-item h3, .contact h3 {
+.technologies-item h3 {
   margin: 10px auto 30px; }
 
-.technologies-item img, .contact img {
+.technologies-item img {
   width: 100%; }
 
-.technologies-item .icon, .contact .icon {
+.technologies-item .icon {
   align-items: center;
   background: #D35244 url("../img/built/grain.png");
   border-radius: 20%;
@@ -221,29 +231,38 @@ section {
   margin: 30px auto;
   transition: .5s all;
   width: 100px; }
-  .technologies-item .icon:hover, .contact .icon:hover {
-    transform: translate(0, -15%);
-    box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244, 0 25px 15px -5px #4c5057; }
   @media (max-width: 576px) {
-    .technologies-item .icon, .contact .icon {
+    .technologies-item .icon {
       height: 50px;
       width: 50px;
       font-size: 2.5em;
       margin: 20px auto; } }
+  .technologies-item .icon:hover {
+    transform: translate(0, -15%);
+    box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244, 0 25px 15px -5px #4c5057; }
 
 .contact {
   background-color: #4c5057;
   color: #f6edd8; }
-  .contact .row {
-    justify-content: center; }
-  .contact .icon {
-    color: #f6edd8;
-    margin: 50px;
-    transition: 1.5s all; }
-    .contact .icon:hover {
-      transform: rotate(360deg); }
-  .contact a, .contact a:visited, .contact a:active {
-    color: #f6edd8; }
+  .contact fieldset {
+    font-family: "Roboto", sans-serif;
+    width: 550px;
+    margin: 0 auto;
+    border: none; }
+    @media (max-width: 576px) {
+      .contact fieldset {
+        width: 100%; } }
+  .contact input, .contact textarea {
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 1em;
+    font-family: "Roboto", sans-serif; }
+    .contact input.button, .contact textarea.button {
+      background: #f6edd8;
+      color: #383A3C; }
   .contact h1 {
     color: #f6edd8;
     text-shadow: 2px 2px 0 #383A3C, 4px 4px 0 #f6edd8; }

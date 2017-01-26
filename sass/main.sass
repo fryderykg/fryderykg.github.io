@@ -7,6 +7,7 @@
 body
   color: $color-almost-black
   margin: 100px 0 0 0
+  font-family: $font-primary
 
 header
   align-items: center
@@ -92,12 +93,20 @@ section
   min-height: calc(100vh - 100px)
   outline-offset: -10px
   outline: 1px dashed $color-beige
-  padding-bottom: 50px
+  padding-bottom: 30px
   text-align: center
 
 //  ABOUT ME SECTION
 .about-me
   background-color: $color-blue
+  .icon
+    @include icon-style
+    color: $color-beige
+    transition: 1.5s all
+    &:hover
+      transform: rotate(360deg)
+    a, a:visited, a:active
+      color: $color-beige
 
 // todo delete after finish site
 .under-construction
@@ -156,48 +165,40 @@ section
   outline: 1px dashed $color-gray-dark
   padding-bottom: 50px
 
-.technologies-item, .contact
+.technologies-item
   h3
     margin: 10px auto 30px
   img
     width: 100%
-
   .icon
-    align-items: center
-    background: $color-red url("../img/built/grain.png")
-    border-radius: 20%
-    box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red
-    color: $color-beige
-    display: flex
-    font-size: 4em
-    height: 100px
-    justify-content: center
-    margin: 30px auto
-    transition: .5s all
-    width: 100px
+    @include icon-style
     &:hover
       transform: translate(0, -15%)
       box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red, 0 25px 15px -5px $color-gray-dark
-    @media (max-width: 576px)
-      height: 50px
-      width: 50px
-      font-size: 2.5em
-      margin: 20px auto
 
 //  CONTACT SECTION
 .contact
   background-color: $color-gray-dark
   color: $color-beige
-  .row
-    justify-content: center
-  .icon
-    color: $color-beige
-    margin: 50px
-    transition: 1.5s all
-    &:hover
-      transform: rotate(360deg)
-  a, a:visited, a:active
-    color: $color-beige
+  fieldset
+    font-family: $font-primary
+    width: 550px
+    margin: 0 auto
+    border: none
+    @media (max-width: 576px)
+      width: 100%
+  input, textarea
+    width: 100%
+    border-radius: 5px
+    display: block
+    padding: 10px
+    margin: 10px auto
+    font-size: 1em
+    font-family: $font-primary
+    &.button
+      background: $color-beige
+      color: $color-almost-black
+
   h1
     color: $color-beige
     text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige
