@@ -56,7 +56,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   outline: 1px dashed rgba(246, 237, 216, 0.7);
   outline-offset: -10px; }
@@ -97,19 +97,17 @@ nav {
   header {
     visibility: hidden; }
     header.responsive {
-      height: auto;
       visibility: visible; }
   ul.topnav {
     flex-direction: column; }
     ul.topnav li.icon {
-      visibility: visible;
+      display: inline;
+      line-height: 1.5em;
       position: absolute;
-      z-index: 100;
       right: 20px;
       top: 0;
-      opacity: 1;
-      display: inline;
-      line-height: 1.5em; }
+      visibility: visible;
+      z-index: 100; }
     ul.topnav li:nth-of-type(4) {
       display: none; } }
 

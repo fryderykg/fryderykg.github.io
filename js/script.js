@@ -16,13 +16,15 @@ function closeMenu() {
         myTopnav.className = "row";
     }
 }
-
-document.getElementById("toggleMenuIcon").addEventListener("click", toggleMenu);
-
+// jQuery functions
 // Scroll certain amounts from current position
 $(document).ready(function(){
     // Add smooth scrolling to all links
     $('a.menu').on('click', function(event) {
+        // Check window width to calculate offset
+        var width = $(window).width(),
+            topOffset = 100;
+        if (width <= 768){ topOffset = 0; }
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
             // Prevent default anchor click behavior
@@ -32,8 +34,8 @@ $(document).ready(function(){
             // Using jQuery's animate() method to add smooth page scroll
             // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
-                scrollTop: $(hash).offset().top -100
-            }, 800, function(){
+                scrollTop: $(hash).offset().top - topOffset
+            }, 1000, function(){
 
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
@@ -41,16 +43,7 @@ $(document).ready(function(){
         } // End if
         closeMenu();
     });
-//
-//     $(window).scroll(function() {
-//         var y_scroll_pos = window.pageYOffset;
-//         var scroll_pos_test = 150;
-//
-//         if(y_scroll_pos > scroll_pos_test) {
-//             $(".navbar").css("background","rgba(0, 0, 0, 0.8)");
-//         }
-//         else {
-//             $(".navbar").css("background","transparent");
-//         }
-//     });
 });
+
+// EVENT HANDLERS
+document.getElementById("toggleMenuIcon").addEventListener("click", toggleMenu);
