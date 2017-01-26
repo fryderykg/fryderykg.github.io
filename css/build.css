@@ -54,7 +54,7 @@ p {
   font-family: Oswald, sans-serif;
   font-size: 1em;
   text-transform: uppercase;
-  margin-bottom: 50px; }
+  margin-bottom: 30px; }
 
 * {
   box-sizing: border-box; }
@@ -200,10 +200,10 @@ section {
 .technologies {
   background-color: #f6edd8;
   outline: 1px dashed #4c5057;
-  padding-bottom: 100px; }
+  padding-bottom: 50px; }
 
 .technologies-item h3, .contact h3 {
-  margin: 10px auto 50px; }
+  margin: 10px auto 30px; }
 
 .technologies-item img, .contact img {
   width: 100%; }
@@ -224,6 +224,12 @@ section {
   .technologies-item .icon:hover, .contact .icon:hover {
     transform: translate(0, -15%);
     box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244, 0 25px 15px -5px #4c5057; }
+  @media (max-width: 576px) {
+    .technologies-item .icon, .contact .icon {
+      height: 50px;
+      width: 50px;
+      font-size: 2.5em;
+      margin: 20px auto; } }
 
 .contact {
   background-color: #4c5057;

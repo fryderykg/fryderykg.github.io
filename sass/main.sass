@@ -154,11 +154,11 @@ section
 .technologies
   background-color: $color-beige
   outline: 1px dashed $color-gray-dark
-  padding-bottom: 100px
+  padding-bottom: 50px
 
 .technologies-item, .contact
   h3
-    margin: 10px auto 50px
+    margin: 10px auto 30px
   img
     width: 100%
 
@@ -178,6 +178,11 @@ section
     &:hover
       transform: translate(0, -15%)
       box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red, 0 25px 15px -5px $color-gray-dark
+    @media (max-width: 576px)
+      height: 50px
+      width: 50px
+      font-size: 2.5em
+      margin: 20px auto
 
 //  CONTACT SECTION
 .contact
