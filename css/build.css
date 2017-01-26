@@ -66,9 +66,9 @@ nav {
   nav img {
     height: 120px;
     left: 50%;
-    position: absolute;
+    position: fixed;
     top: 0;
-    transform: translate(-50%, -12%); }
+    transform: translate(-50%, 0); }
   nav ul {
     display: flex;
     justify-content: space-around;
