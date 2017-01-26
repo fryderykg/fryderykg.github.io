@@ -101,7 +101,6 @@ section
   background-color: $color-blue
   .icon
     @include icon-style
-    color: $color-beige
     transition: 1.5s all
     &:hover
       transform: rotate(360deg)
@@ -173,28 +172,29 @@ section
   .icon
     @include icon-style
     &:hover
-      transform: translate(0, -15%)
       box-shadow: 0 0 0 4px $color-beige, 0 0 0 8px $color-red, 0 25px 15px -5px $color-gray-dark
+      transform: translate(0, -15%)
 
 //  CONTACT SECTION
 .contact
   background-color: $color-gray-dark
   color: $color-beige
   fieldset
-    font-family: $font-primary
-    width: 550px
-    margin: 0 auto
     border: none
+    font-family: $font-primary
+    margin: 0 auto
+    width: 550px
     @media (max-width: 576px)
       width: 100%
   input, textarea
-    width: 100%
     border-radius: 5px
     display: block
-    padding: 10px
-    margin: 10px auto
-    font-size: 1em
     font-family: $font-primary
+    font-size: 1em
+    margin: 10px auto
+    padding: 10px
+    resize: vertical
+    width: 100%
     &.button
       background: $color-beige
       color: $color-almost-black

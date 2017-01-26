@@ -145,14 +145,13 @@ section {
     margin: 30px auto;
     transition: .5s all;
     width: 100px;
-    color: #f6edd8;
     transition: 1.5s all; }
     @media (max-width: 576px) {
       .about-me .icon {
-        height: 50px;
-        width: 50px;
         font-size: 2.5em;
-        margin: 20px auto; } }
+        height: 50px;
+        margin: 20px auto;
+        width: 50px; } }
     .about-me .icon:hover {
       transform: rotate(360deg); }
     .about-me .icon a, .about-me .icon a:visited, .about-me .icon a:active {
@@ -233,33 +232,34 @@ section {
   width: 100px; }
   @media (max-width: 576px) {
     .technologies-item .icon {
-      height: 50px;
-      width: 50px;
       font-size: 2.5em;
-      margin: 20px auto; } }
+      height: 50px;
+      margin: 20px auto;
+      width: 50px; } }
   .technologies-item .icon:hover {
-    transform: translate(0, -15%);
-    box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244, 0 25px 15px -5px #4c5057; }
+    box-shadow: 0 0 0 4px #f6edd8, 0 0 0 8px #D35244, 0 25px 15px -5px #4c5057;
+    transform: translate(0, -15%); }
 
 .contact {
   background-color: #4c5057;
   color: #f6edd8; }
   .contact fieldset {
+    border: none;
     font-family: "Roboto", sans-serif;
-    width: 550px;
     margin: 0 auto;
-    border: none; }
+    width: 550px; }
     @media (max-width: 576px) {
       .contact fieldset {
         width: 100%; } }
   .contact input, .contact textarea {
-    width: 100%;
     border-radius: 5px;
     display: block;
-    padding: 10px;
-    margin: 10px auto;
+    font-family: "Roboto", sans-serif;
     font-size: 1em;
-    font-family: "Roboto", sans-serif; }
+    margin: 10px auto;
+    padding: 10px;
+    resize: vertical;
+    width: 100%; }
     .contact input.button, .contact textarea.button {
       background: #f6edd8;
       color: #383A3C; }
