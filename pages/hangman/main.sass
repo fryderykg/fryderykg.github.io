@@ -6,15 +6,15 @@
   color: rgba($red, $green, $blue, 0.8)
 
 @mixin btn
+  border-radius: 10px
+  border: 2px solid gray
+  box-shadow: 1px 3px 5px black
   color: #FFF
+  cursor: pointer
   font-size: 22px
   line-height: 22px
-  border-radius: 10px
-  text-align: center
   padding: 9px
-  border: 2px solid gray
-  cursor: pointer
-  box-shadow: 1px 3px 5px black
+  text-align: center
   &:hover
     background: #222
     border: 3px solid #fff
@@ -25,7 +25,7 @@
 
 body
   background: #333
-  background: url("pics/background-lg.jpg")
+  background: url("pics/build/background-lg.jpg")
   color: #FFF
   font-family: 'Source Code Pro', monospace
   margin: 0
@@ -35,8 +35,8 @@ body
   flex-wrap: wrap
 
 .container
-  max-width: 830px
   margin: 0 auto
+  max-width: 830px
   text-align: center
 
 .hidden
@@ -51,15 +51,14 @@ header
     .flags
       transform: translateY(-200px)
       transition: 2s all
-      .flag_pol
+      .flag_pl
         display: inline-block
-        transition: 2s all
         transform: translateX(-120px)
-
-      .flag_uk
-        display: inline-block
         transition: 2s all
+      .flag_gb
+        display: inline-block
         transform: translateX(120px)
+        transition: 2s all
     p
       opacity: 0
       transition: 2s all
@@ -80,12 +79,12 @@ header
 
 #board
   transition: all 2s
+  p
+    margin: 5px
 
-
-.remainingChances
-  flex: 1
-
-.score
+.remaining-chances,
+.score,
+.category
   flex: 1
 
 #secretWord
@@ -95,17 +94,17 @@ header
   text-transform: uppercase
   width: 100%
 
-.pictureAndAlphabet
+.picture-and-alphabet
   justify-content: center
 
-.opacityZero
+.opacity-zero
   opacity: 0
 
 #hangmanPic
   // to prevent blinking when picture is reloaded
   max-width: 456px
-  min-width: 456px
   min-height: 285px
+  min-width: 456px
   position: relative
   text-align: center
   img
@@ -142,7 +141,6 @@ header
     border-width: 2px
     cursor: not-allowed
 
-
 #message_lost,
 #message_win
   flex: 1
@@ -150,13 +148,13 @@ header
     @include btn
     background: transparent
     height: 50px
-    margin: 0 auto
+    margin: 30px auto
     width: 160px
 
 /* For tablets: */
 @media (max-width: 767px)
   body
-    background: url("pics/background-md.jpg")
+    background: url("pics/build/background-md.jpg")
   header
     h1
       font-size: 1.5em
@@ -172,20 +170,20 @@ header
     &.hide
       height: 80px
       .flags
-        transition: 2s all
         transform: translateY(-120px)
-        .flag_pol
+        transition: 2s all
+        .flag_pl
           display: inline-block
-          transition: 2s all
           transform: translateX(-50px)
-        .flag_uk
-          display: inline-block
           transition: 2s all
+        .flag_gb
+          display: inline-block
           transform: translateX(50px)
+          transition: 2s all
         img
           margin: 10px 10px
-          transition: 2s
           transform: scale(.7)
+          transition: 2s
       p
         transform: translateY(0px)
   #secretWord
@@ -196,7 +194,7 @@ header
     display: none
 
 @media (max-width: 850px)
-  .pictureAndAlphabet
+  .picture-and-alphabet
     flex-direction: column
   #hangmanPic
     margin: 0 auto
