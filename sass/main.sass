@@ -225,21 +225,22 @@ section
     text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige
 
 // FOOTER
-footer
-  align-items: center
-  background: $color-gray-dark url("../img/built/grain.png")
+.footer
+  bottom: 0
   color: $color-beige
-  display: flex
-  height: 100px
-  justify-content: center
+  height: 60px
+  position: absolute
   text-align: center
+  width: 100%
   p
     margin: 0
   a
     color: $color-beige
     &:active, &:visited
       color: $color-beige
-  
+    &:hover
+      color: $color-gray-light
+      text-decoration: none
 
 // GRID
 .container
