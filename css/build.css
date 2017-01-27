@@ -96,6 +96,7 @@ nav {
         display: none; }
       nav ul li a {
         color: #f6edd8;
+        cursor: pointer;
         font-family: Bazar, sans-serif;
         font-size: 1.5em;
         text-decoration: none;
@@ -180,12 +181,6 @@ section {
       transform: rotate(360deg); }
     .about-me .icon a, .about-me .icon a:visited, .about-me .icon a:active {
       color: #f6edd8; }
-
-.under-construction {
-  color: orange;
-  font-family: "Black Ops One", sans-serif;
-  font-size: calc(2em + 2vw);
-  opacity: .8; }
 
 .portfolio {
   background-color: #e68966; }
