@@ -49,8 +49,8 @@ body {
   font-family: "Roboto", sans-serif; }
 
 hr {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
-  border-top: 1px dashed rgba(0, 0, 0, 0.25);
+  border-top: 1px dashed #f6edd8;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
   height: 0;
   margin: 0;
   position: absolute;
@@ -59,6 +59,8 @@ hr {
     bottom: 10px; }
   hr.top {
     top: 10px; }
+  hr.light-bg {
+    border-top-color: white; }
 
 header {
   align-items: center;
