@@ -48,6 +48,18 @@ body {
   margin: 100px 0 0 0;
   font-family: "Roboto", sans-serif; }
 
+hr {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+  border-top: 1px dashed rgba(0, 0, 0, 0.25);
+  height: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%; }
+  hr.bottom {
+    bottom: 10px; }
+  hr.top {
+    top: 10px; }
+
 header {
   align-items: center;
   background: #7ac0c0 url("../img/built/grain.png");
@@ -57,9 +69,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
-  outline: 1px dashed rgba(246, 237, 216, 0.7);
-  outline-offset: -10px; }
+  z-index: 10; }
 
 nav {
   flex: 1; }
@@ -68,7 +78,8 @@ nav {
     left: 50%;
     position: fixed;
     top: 0;
-    transform: translate(-50%, 0); }
+    transform: translate(-50%, 0);
+    z-index: 20; }
   nav ul {
     display: flex;
     justify-content: space-around;
@@ -135,10 +146,10 @@ nav {
 
 section {
   background-image: url("../img/built/grain.png");
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   min-height: calc(100vh - 100px);
-  outline-offset: -10px;
-  outline: 1px dashed #f6edd8;
   padding-bottom: 30px;
+  position: relative;
   text-align: center; }
 
 .about-me {
@@ -218,9 +229,7 @@ section {
     padding-top: 20px; }
 
 .technologies {
-  background-color: #f6edd8;
-  outline: 1px dashed #4c5057;
-  padding-bottom: 50px; }
+  background-color: #f6edd8; }
 
 .technologies-item h3 {
   margin: 10px auto 30px; }
@@ -263,6 +272,7 @@ section {
       .contact fieldset {
         width: 100%; } }
   .contact input, .contact textarea {
+    border: none;
     border-radius: 5px;
     display: block;
     font-family: "Roboto", sans-serif;
@@ -285,8 +295,6 @@ footer {
   display: flex;
   height: 100px;
   justify-content: center;
-  outline-offset: -10px;
-  outline: 1px dashed #f6edd8;
   text-align: center; }
   footer p {
     margin: 0; }
