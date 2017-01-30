@@ -9,22 +9,8 @@ body
   margin: 100px 0 0 0
   font-family: $font-primary
 
-//  Dashed separator
-hr
-  border-top: 1px dashed $color-beige
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.25)
-  height: 0
-  margin: 0
-  position: absolute
-  width: 100%
-  &.bottom
-    bottom: 10px
-  &.top
-    top: 10px
-  &.light-bg
-    border-top-color: white
-
 header
+  @include outline($color-beige)
   align-items: center
   background: $color-blue url("../img/built/grain.png")
   border-bottom: 1px solid rgba(0, 0, 0, 0.2)
@@ -115,6 +101,7 @@ nav
 
 // ALL SECTIONS
 section
+  @include outline($color-beige)
   background-image: url("../img/built/grain.png")
   border-bottom: 1px solid rgba(0, 0, 0, 0.2)
   min-height: calc(100vh - 100px)
@@ -180,6 +167,7 @@ section
 // TECHNOLOGIES SECTION
 .technologies
   background-color: $color-beige
+  outline-color: $color-gray-dark
 
 .technologies-item
   h3

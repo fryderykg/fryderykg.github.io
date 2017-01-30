@@ -46,21 +46,9 @@ body {
   margin: 100px 0 0 0;
   font-family: "Roboto", sans-serif; }
 
-hr {
-  border-top: 1px dashed #f6edd8;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
-  height: 0;
-  margin: 0;
-  position: absolute;
-  width: 100%; }
-  hr.bottom {
-    bottom: 10px; }
-  hr.top {
-    top: 10px; }
-  hr.light-bg {
-    border-top-color: white; }
-
 header {
+  outline: 1px dashed #f6edd8;
+  outline-offset: -10px;
   align-items: center;
   background: #7ac0c0 url("../img/built/grain.png");
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -146,6 +134,8 @@ nav {
     margin-left: 10px; }
 
 section {
+  outline: 1px dashed #f6edd8;
+  outline-offset: -10px;
   background-image: url("../img/built/grain.png");
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   min-height: calc(100vh - 100px);
@@ -224,7 +214,8 @@ section {
     padding-top: 20px; }
 
 .technologies {
-  background-color: #f6edd8; }
+  background-color: #f6edd8;
+  outline-color: #4c5057; }
 
 .technologies-item h3 {
   margin: 10px auto 30px; }
