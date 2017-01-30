@@ -10,6 +10,7 @@ body
   font-family: $font-primary
 
 header
+  @include outline($color-beige)
   align-items: center
   background: $color-blue url("../img/built/grain.png")
   border-bottom: 1px solid rgba(0, 0, 0, 0.2)
@@ -19,9 +20,6 @@ header
   top: 0
   width: 100%
   z-index: 10
-  //@include shadow-box
-  outline: 1px dashed rgba(246, 237, 216, 0.7)
-  outline-offset: -10px
 
 //  NAVIGATION
 nav
@@ -32,6 +30,7 @@ nav
     position: fixed
     top: 0
     transform: translate(-50%, 0)
+    z-index: 20
   ul
     display: flex
     justify-content: space-around
@@ -46,6 +45,7 @@ nav
         display: none
       a
         color: $color-beige
+        cursor: pointer
         font-family: $font-decoration
         font-size: 1.5em
         text-decoration: none
@@ -101,11 +101,12 @@ nav
 
 // ALL SECTIONS
 section
+  @include outline($color-beige)
   background-image: url("../img/built/grain.png")
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2)
   min-height: calc(100vh - 100px)
-  outline-offset: -10px
-  outline: 1px dashed $color-beige
   padding-bottom: 30px
+  position: relative
   text-align: center
 
 //  ABOUT ME SECTION
@@ -118,13 +119,6 @@ section
       transform: rotate(360deg)
     a, a:visited, a:active
       color: $color-beige
-
-// todo delete after finish site
-.under-construction
-  color: orange
-  font-family: "Black Ops One", sans-serif
-  font-size: calc(2em + 2vw)
-  opacity: .8
 
 //  PORTFOLIO SECTION
 .portfolio
@@ -173,8 +167,7 @@ section
 // TECHNOLOGIES SECTION
 .technologies
   background-color: $color-beige
-  outline: 1px dashed $color-gray-dark
-  padding-bottom: 50px
+  outline-color: $color-gray-dark
 
 .technologies-item
   h3
@@ -199,6 +192,7 @@ section
     @media (max-width: 576px)
       width: 100%
   input, textarea
+    border: none
     border-radius: 5px
     display: block
     font-family: $font-primary
@@ -210,28 +204,22 @@ section
     &.button
       background: $color-beige
       color: $color-almost-black
-  h1
-    color: $color-beige
-    text-shadow: 2px 2px 0 $color-almost-black, 4px 4px 0 $color-beige
 
 // FOOTER
-footer
-  align-items: center
-  background: $color-gray-dark url("../img/built/grain.png")
+.footer
+  bottom: 0
   color: $color-beige
-  display: flex
-  height: 100px
-  justify-content: center
-  outline-offset: -10px
-  outline: 1px dashed $color-beige
+  height: 60px
+  position: absolute
   text-align: center
-  p
-    margin: 0
+  width: 100%
   a
     color: $color-beige
     &:active, &:visited
       color: $color-beige
-  
+    &:hover
+      color: $color-gray-light
+      text-decoration: none
 
 // GRID
 .container
@@ -241,10 +229,6 @@ footer
 .row
   display: flex
   flex-wrap: wrap
-
-.col
-  border-color: #f1c40f
-  padding: 15px
 
 // For desktop
 .col-md-1
