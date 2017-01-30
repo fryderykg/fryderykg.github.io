@@ -30,9 +30,7 @@ h3 {
   text-transform: uppercase; }
 
 p {
-  font-family: Roboto, sans-serif;
-  margin-bottom: 0;
-  padding: 10px; }
+  font-family: Roboto, sans-serif; }
 
 .section-subtitle {
   font-family: Oswald, sans-serif;
@@ -281,9 +279,6 @@ section {
     .contact input.button, .contact textarea.button {
       background: #f6edd8;
       color: #383A3C; }
-  .contact h1 {
-    color: #f6edd8;
-    text-shadow: 2px 2px 0 #383A3C, 4px 4px 0 #f6edd8; }
 
 .footer {
   bottom: 0;
@@ -292,8 +287,6 @@ section {
   position: absolute;
   text-align: center;
   width: 100%; }
-  .footer p {
-    margin: 0; }
   .footer a {
     color: #f6edd8; }
     .footer a:active, .footer a:visited {
@@ -309,10 +302,6 @@ section {
 .row {
   display: flex;
   flex-wrap: wrap; }
-
-.col {
-  border-color: #f1c40f;
-  padding: 15px; }
 
 .col-md-1 {
   flex: 8.333%; }
